@@ -100,15 +100,15 @@ exports.signin = (req, res) => {
                 .status(400)
                 .json({ errors: [{ password: "incorrect" }] });
             }
-            let access_token = jwt.sign(user.email, user._id, 3600);
+           
+            let access_token = jwt.sign({ email: user.email, useID: user._id }, process.env.SECRETKEY,{ expiresIn: '1h' });
             jwt.verify(
               access_token,
-              process.env.TOKEN_SECRET,
+              process.env.SECRETKEY,
               (err, decoded) => {
                 if (err) {
                   res.status(500).json({ errors: err });
                 }
-               
                 if (decoded) {
                   return res.status(200).json({
                     success: true,
