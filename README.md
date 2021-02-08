@@ -1,1 +1,1 @@
-# React-Store
+# Atlanta Animal Activists.
