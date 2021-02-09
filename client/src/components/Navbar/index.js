@@ -16,7 +16,7 @@ const Nav = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        News
+                    ATLANTA ANIMAL ACTIVISTS
     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>

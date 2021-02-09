@@ -5,8 +5,11 @@ const { createJWT } = require("../utils/auth");
 
 const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
-exports.signup = (req, res, next) => {
+//  ------------------------------------------ Sign Up ------------------------------------------------------
+exports.signup = (req, res) => {
   let { name, email, password, password_confirmation } = req.body;
+
+  // ----------------- Error handleing ----------------------
   let errors = [];
   if (!name) {
     errors.push({ name: "required" });
@@ -31,8 +34,10 @@ exports.signup = (req, res, next) => {
   if (errors.length > 0) {
     return res.status(422).json({ errors: errors });
   }
+
   User.findOne({ email: email })
-    .then((user) => {
+  .then((user) => {
+      // Check if user exists
       if (user) {
         return res
           .status(422)
@@ -43,6 +48,7 @@ exports.signup = (req, res, next) => {
           email: email,
           password: password,
         });
+        // Encrypt password
         bcrypt.genSalt(10, function (err, salt) {
           bcrypt.hash(password, salt, function (err, hash) {
             if (err) throw err;
@@ -70,8 +76,13 @@ exports.signup = (req, res, next) => {
       });
     });
 };
+
+//  ------------------------------------------ Sign In ------------------------------------------------------
+
 exports.signin = (req, res) => {
   let { email, password } = req.body;
+
+  // ----------------- Error handleing ----------------------
   let errors = [];
   if (!email) {
     errors.push({ email: "required" });
@@ -85,13 +96,16 @@ exports.signin = (req, res) => {
   if (errors.length > 0) {
     return res.status(422).json({ errors: errors });
   }
+
   User.findOne({ email: email })
     .then((user) => {
+      // Check if user exists
       if (!user) {
         return res.status(404).json({
           errors: [{ user: "not found" }],
         });
       } else {
+        // If user exists compare encrypted passwords
         bcrypt
           .compare(password, user.password)
           .then((isMatch) => {
@@ -100,27 +114,23 @@ exports.signin = (req, res) => {
                 .status(400)
                 .json({ errors: [{ password: "incorrect" }] });
             }
-           
-            let access_token = jwt.sign({ email: user.email, useID: user._id }, process.env.SECRETKEY,{ expiresIn: '1h' });
-            jwt.verify(
-              access_token,
-              process.env.SECRETKEY,
-              (err, decoded) => {
-                if (err) {
-                  res.status(500).json({ errors: err });
-                }
-                if (decoded) {
-                  return res.status(200).json({
-                    success: true,
-                    token: access_token,
-                    message: user,
-                  });
-                }
+            // If they match we create our access token an verify it
+            let access_token = createJWT(user.email, user._id, "1h");
+            jwt.verify(access_token, process.env.SECRETKEY, (err, decoded) => {
+              if (err) {
+                res.status(500).json({ errors: err });
               }
-            );
+              if (decoded) {
+                return res.status(200).json({
+                  success: true,
+                  token: access_token,
+                  message: user,
+                });
+              }
+            });
           })
           .catch((err) => {
-            res.status(500).json({ errors:"here", err });
+            res.status(500).json({ errors: err });
           });
       }
     })

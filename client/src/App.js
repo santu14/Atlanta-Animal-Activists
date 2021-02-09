@@ -5,6 +5,7 @@ import Nav from "./components/Navbar";
 
 
 
+import AuthForm from './AuthForm'
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <p>
           ATLANTA ANIMAL ACTIVISTS
         </p>
+        <AuthForm/>
        
       </header>
     </div>
