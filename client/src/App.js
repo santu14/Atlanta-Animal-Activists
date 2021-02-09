@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import AuthForm from './AuthForm'
 function App() {
   return (
     <div className="App">
@@ -8,6 +8,7 @@ function App() {
         <p>
           ATLANTA ANIMAL ACTIVISTS
         </p>
+        <AuthForm/>
        
       </header>
     </div>

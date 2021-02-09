@@ -31,7 +31,7 @@ app.use(cors());
 app.use('/api', authRoutes);
 
 app.listen(PORT, () => {
- console.log(`Welcome to the mern auth tutorial! Server is running on ${PORT}`)
+ console.log(`Server is running on ${PORT}`)
 });
 
 
