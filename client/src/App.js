@@ -1,17 +1,28 @@
 
 import './App.css';
+import React from 'react';
+import Nav from './components/Navbar';
+import {ThemeProvider} from '@material-ui/core';
+import theme from './components/Theme';
 import AuthForm from './AuthForm'
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          ATLANTA ANIMAL ACTIVISTS
-        </p>
+    <ThemeProvider theme={theme}>
+    <div className='App'>
+      <header className='App-header'>
+        <Nav>
+
+        </Nav>
+        <br/>
+        
+        <br/>
+
         <AuthForm/>
        
       </header>
     </div>
+    </ThemeProvider>
   );
 }
 
