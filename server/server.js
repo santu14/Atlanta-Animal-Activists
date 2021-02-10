@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require("mongoose");
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 require('dotenv').config();
 
 
@@ -10,6 +12,7 @@ require('dotenv').config();
 //import routes
 const authRoutes = require('./routes/auth');
 const { db } = require('./models/User');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,6 +28,7 @@ mongoose
 
 //middlewares
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(cors());
 
 //routes middleware
