@@ -131,11 +131,21 @@ exports.signin = (req, res) => {
       res.status(500).json({ errors: err });
     });
 };
+//  ------------------------------------------ Sign Out ------------------------------------------------------
+
 exports.signout = (req, res) => {
   res
-  .cookie("token", " ", { 
-    httpOnly: true, 
-    expires: new Date(0) 
-  })
-  .send();
+    .cookie("token", " ", {
+      httpOnly: true,
+      expires: new Date(0),
+    })
+    .send();
 };
+
+// exports.checkauth = (req, res) => {
+//   try {
+//     const token = req.cookies.token;
+//     if (!token) return res.status(401).json({error: "Unauthorized"})
+//     const verified = jwt.verify(token, process.env.SECRETKEY);
+//   } catch (err) {}
+// };
