@@ -7,8 +7,8 @@ const Nav = () => {
 
     return (
         <div>
-            <AppBar position="static">
-                <Toolbar>
+            <AppBar position="sticky" >
+                <Toolbar fullWidth>
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <Menu />
                     </IconButton>
