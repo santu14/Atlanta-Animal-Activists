@@ -1,5 +1,5 @@
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import { grey, orange, lightGreen } from '@material-ui/core/colors';
+import { createMuiTheme } from '@material-ui/core';
+import { orange, lightGreen } from '@material-ui/core/colors';
 
 
 const theme = createMuiTheme({

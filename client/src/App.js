@@ -2,7 +2,7 @@
 import './App.css';
 import React from 'react';
 import Nav from './components/Navbar';
-import {ThemeProvider, Button, Tooltip, Typography, TextField} from '@material-ui/core';
+import {ThemeProvider} from '@material-ui/core';
 import theme from './components/Theme';
 import AuthForm from './AuthForm'
 
