@@ -28,6 +28,7 @@ theme.props = {
     },
 
 
+
 };
 
 theme.overrides = {
@@ -68,7 +69,8 @@ theme.overrides = {
             top: theme.spacing(2),
             border: '1px solid ${grey[500]}',
         }
-    }
+    },
+
 
 }
 
