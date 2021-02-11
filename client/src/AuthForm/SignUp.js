@@ -6,7 +6,7 @@ const SignUp = (props) => {
  
   return (
     <div>
-      <Typography component="h1" variant="h5" className="text-center">
+      <Typography variant='h5'>
         Sign Up
       </Typography>
       <form noValidate>
