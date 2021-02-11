@@ -4,21 +4,19 @@ import Menu from '@material-ui/icons/Menu';
 import useStyles from './Styles';
 
 
-
-
 const Nav = () => {
-const classes = useStyles();
+    const classes = useStyles();
     return (
 
-        <AppBar position='static' >
+        <AppBar container position='static'  >
             <Toolbar >
-            <Typography variant='h6' className={classes.typographyStyles} >
+                <Typography variant='h4' className={classes.typographyStyles} >
                     ATLANTA ANIMAL ACTIVISTS
                 </Typography>
-                <IconButton color='inherit' aria-label='menu'>
+                {/* <IconButton color='inherit' aria-label='menu'>
                     <Menu />
-                </IconButton>
-               
+                </IconButton> */}
+
 
             </Toolbar>
         </AppBar>

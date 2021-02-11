@@ -6,7 +6,7 @@ const SignUp = (props) => {
  
   return (
     <div>
-      <Typography component="h1" variant="h5" className="text-center">
+      <Typography variant='h5'>
         Sign Up
       </Typography>
       <form noValidate>
@@ -40,7 +40,7 @@ const SignUp = (props) => {
             name="password"
             label="Password"
             type="password"
-            id="password"
+
             autoComplete="current-password"
             onChange={props.handleInputChange}
           />
@@ -52,7 +52,7 @@ const SignUp = (props) => {
             name="password_confirmation"
             label="Confirm Password"
             type="password"
-            id="confirm-password"
+
             onChange={props.handleInputChange}
           />
 
