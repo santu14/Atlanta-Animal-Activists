@@ -1,14 +1,15 @@
 import { makeStyles } from '@material-ui/core';
-import { blueGrey } from '@material-ui/core/colors';
 import theme from './Theme';
 const useStyles = makeStyles (() => ({
     typographyStyles :{
         flex: 1,
         textAlign: 'center',
-        fontWeight: 'bolder'
+        fontWeight: 'bolder',
+        marginTop: '25px',
+        marginBottom: '25px',
     },
     paper: {
-        backgroundColor: blueGrey[800],
+        backgroundColor: '#363b46',
         padding: theme.spacing(2), 
         textAlign: 'center',  
     },
