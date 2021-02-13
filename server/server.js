@@ -10,7 +10,7 @@ require('dotenv').config();
 
 
 //import routes
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/APIRoutes');
 const { db } = require('./models/User');
 
 

@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { createJWT } = require("../utils/auth");
+const { createJWT } = require("../utils/jwt");
 
 const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
@@ -131,8 +131,8 @@ exports.signin = (req, res) => {
       res.status(500).json({ errors: err });
     });
 };
-//  ------------------------------------------ Sign Out ------------------------------------------------------
 
+//  ------------------------------------------ Sign Out ------------------------------------------------------
 exports.signout = (req, res) => {
   res
     .cookie("token", " ", {
@@ -142,10 +142,20 @@ exports.signout = (req, res) => {
     .send();
 };
 
-// exports.checkauth = (req, res) => {
-//   try {
-//     const token = req.cookies.token;
-//     if (!token) return res.status(401).json({error: "Unauthorized"})
-//     const verified = jwt.verify(token, process.env.SECRETKEY);
-//   } catch (err) {}
-// };
+//  ------------------------------------------ Check if user is authorized ------------------------------------------------------
+exports.checkauth = (req, res) => {
+  try {
+    const token = req.cookies.token;
+    if (!token) return res.status(401).json({error: "Unauthorized"})
+
+    const verify = jwt.verify(token, process.env.SECRETKEY)
+    
+    if(verify){
+      return res.status(200).json({isAuth: true, message:"User authorized"});
+    } else {
+      return res.status(401).json({ errors: "Unauthorized" });
+    }
+  } catch (err) {
+    return res.status(500).json({error: "Something went wrong with exports.checkauth"})
+  }
+};

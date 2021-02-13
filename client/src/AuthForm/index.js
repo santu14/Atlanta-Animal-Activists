@@ -1,20 +1,23 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import API from '../utils/API'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 
+import { IsAuthContext } from "./isAuthContext";
 
 
 
 const AuthForm = () => {
+   
 
     const initialFormState = {
         name: "", 
         email: "",
         password: ""
     }
-    const [formState, setFormState] = useState(initialFormState)
-
+    const [formState, setFormState] = useState(initialFormState);
+    const [isAuth, setIsAuth] = useContext(IsAuthContext);
+    console.log(isAuth)
     const handleInputChange = ({target: {name, value}}) => {
         setFormState({...formState, [name]: value})
     }
@@ -35,6 +38,9 @@ const AuthForm = () => {
     }
     useEffect(() => {
         console.log(formState);
+        API.checkAuth().then((res) => {
+            console.log(res.data.isAuth)
+          })
     }, [formState])
 
     
@@ -44,6 +50,7 @@ const AuthForm = () => {
             <br></br>
             <hr></hr>
             <SignUp handleInputChange={handleInputChange} submit={submitSignUp}/>
+            
         </div>
     )
 

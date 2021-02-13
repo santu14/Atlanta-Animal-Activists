@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button,Typography } from "@material-ui/core";
+import { TextField, Button,Typography, Grid } from "@material-ui/core";
 
 
 const SignUp = (props) => {
@@ -10,7 +10,8 @@ const SignUp = (props) => {
         Sign Up
       </Typography>
       <form noValidate>
-       
+       <Grid>
+
           <TextField
             variant="outlined"
             margin="normal"
@@ -40,7 +41,6 @@ const SignUp = (props) => {
             name="password"
             label="Password"
             type="password"
-
             autoComplete="current-password"
             onChange={props.handleInputChange}
           />
@@ -52,10 +52,9 @@ const SignUp = (props) => {
             name="password_confirmation"
             label="Confirm Password"
             type="password"
-
             onChange={props.handleInputChange}
           />
-
+       </Grid>
 
         <Button
           color="primary"
@@ -66,6 +65,7 @@ const SignUp = (props) => {
         >
           Sign In
         </Button>
+
       </form>
     </div>
   );
