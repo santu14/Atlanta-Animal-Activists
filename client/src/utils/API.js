@@ -13,8 +13,9 @@ export default {
     });
   },
   signOut: () => {
-    return axios.get("/api/signout").then((data) => {
-      console.log(data);
-    });
+    return axios.get("/api/signout")
+  },
+  checkAuth: () => {
+    return axios.get("/api/checkauth");
   }
 };
