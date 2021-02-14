@@ -63,7 +63,7 @@ const SignUp = (props) => {
           variant="contained"
           onClick={props.submit}
         >
-          Sign In
+          Sign Up
         </Button>
 
       </form>

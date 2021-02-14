@@ -123,7 +123,7 @@ exports.signin = (req, res) => {
             });
           })
           .catch((err) => {
-            res.status(500).json({ errors: err });
+            res.status(500).json({ errors: "Internal error with sign in" });
           });
       }
     })
@@ -146,14 +146,14 @@ exports.signout = (req, res) => {
 exports.checkauth = (req, res) => {
   try {
     const token = req.cookies.token;
-    if (!token) return res.status(401).json({error: "Unauthorized"})
+    if (!token) return res.status(200).json({isAuth: "UNAUTHORIZED", message: "Unauthorized" })
 
     const verify = jwt.verify(token, process.env.SECRETKEY)
     
     if(verify){
-      return res.status(200).json({isAuth: true, message:"User authorized"});
+      return res.status(200).json({isAuth: "AUTHORIZED", message:"User authorized"});
     } else {
-      return res.status(401).json({ errors: "Unauthorized" });
+      return res.status(200).json({isAuth: "UNAUTHORIZED", message: "Unauthorized" });
     }
   } catch (err) {
     return res.status(500).json({error: "Something went wrong with exports.checkauth"})

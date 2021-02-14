@@ -13,7 +13,7 @@ export default {
     });
   },
   signOut: () => {
-    return axios.get("/api/signout")
+    return axios.get("/api/signout");
   },
   checkAuth: () => {
     return axios.get("/api/checkauth");

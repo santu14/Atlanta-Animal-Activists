@@ -2,6 +2,8 @@ import React, {useState, useEffect, useContext} from 'react'
 import API from '../utils/API'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import SignOut from './signOut'
+
 
 import { IsAuthContext } from "./isAuthContext";
 
@@ -16,8 +18,8 @@ const AuthForm = () => {
         password: ""
     }
     const [formState, setFormState] = useState(initialFormState);
-    const [isAuth, setIsAuth] = useContext(IsAuthContext);
-    console.log(isAuth)
+    const [state, dispatch] = useContext(IsAuthContext);
+    
     const handleInputChange = ({target: {name, value}}) => {
         setFormState({...formState, [name]: value})
     }
@@ -27,6 +29,7 @@ const AuthForm = () => {
         const {email, password} = formState
         console.log({email: email, password: password})
         API.signIn({email: email, password: password})
+        
 
     }
     const submitSignUp = (e) => {
@@ -36,10 +39,18 @@ const AuthForm = () => {
         API.signUp({name: name, email: email, password: password, password_confirmation: password_confirmation})
 
     }
+    const submitSignOut = (e) => {
+        e.preventDefault();
+       
+        API.signOut()
+
+    }
     useEffect(() => {
         console.log(formState);
         API.checkAuth().then((res) => {
             console.log(res.data.isAuth)
+            dispatch({type: res.data.isAuth})
+            console.log(state.isAuth)
           })
     }, [formState])
 
@@ -50,7 +61,9 @@ const AuthForm = () => {
             <br></br>
             <hr></hr>
             <SignUp handleInputChange={handleInputChange} submit={submitSignUp}/>
-            
+            <hr></hr>
+
+            <SignOut submit={submitSignOut}/>
         </div>
     )
 
