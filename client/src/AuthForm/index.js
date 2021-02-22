@@ -9,6 +9,7 @@ import { IsAuthContext } from "./isAuthContext";
 
 
 
+
 const AuthForm = () => {
    
 
@@ -18,7 +19,7 @@ const AuthForm = () => {
         password: ""
     }
     const [formState, setFormState] = useState(initialFormState);
-    const [state, dispatch] = useContext(IsAuthContext);
+    const {state, checkAuth} = useContext(IsAuthContext);
     
     const handleInputChange = ({target: {name, value}}) => {
         setFormState({...formState, [name]: value})
@@ -28,7 +29,10 @@ const AuthForm = () => {
         e.preventDefault();
         const {email, password} = formState
         console.log({email: email, password: password})
-        API.signIn({email: email, password: password})
+        API.signIn({email: email, password: password}).then((res) => {
+
+            checkAuth()
+        })
         
 
     }
@@ -36,22 +40,25 @@ const AuthForm = () => {
         e.preventDefault();
         const {name, email, password, password_confirmation} = formState
         console.log({email: email, password: password})
-        API.signUp({name: name, email: email, password: password, password_confirmation: password_confirmation})
+        API.signUp({name: name, email: email, password: password, password_confirmation: password_confirmation}).then((res) => {
 
+            checkAuth()
+        })
     }
     const submitSignOut = (e) => {
         e.preventDefault();
        
-        API.signOut()
+        API.signOut().then((res) => {
+
+            checkAuth()
+        })
+        
 
     }
     useEffect(() => {
         console.log(formState);
-        API.checkAuth().then((res) => {
-            console.log(res.data.isAuth)
-            dispatch({type: res.data.isAuth})
-            console.log(state.isAuth)
-          })
+        
+        console.log(state);
     }, [formState])
 
     
