@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button,Typography, Grid } from "@material-ui/core";
+import { TextField, Button,Typography, Grid, Link} from "@material-ui/core";
 
 
 const SignUp = (props) => {
@@ -65,7 +65,9 @@ const SignUp = (props) => {
         >
           Sign Up
         </Button>
-
+        <Link variant="body2" name="signIn" onClick={props.switch}>
+          {"Already have an account? Sign In"}
+        </Link>
       </form>
     </div>
   );

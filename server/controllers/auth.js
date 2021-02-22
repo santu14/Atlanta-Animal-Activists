@@ -25,7 +25,7 @@ exports.signup = (req, res) => {
     errors.push({ password: "Password did not match." });
   }
   if (errors.length > 0) {
-    return res.status(422).json({ errors: errors });
+    return res.json({ errors: errors });
   }
 
   User.findOne({ email: email })
