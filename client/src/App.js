@@ -8,6 +8,7 @@ import AuthForm from "./AuthForm";
 import AuthState from "./AuthForm/isAuthContext";
 function App() {
   const classes = useStyles();
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -40,6 +41,7 @@ function App() {
               <Grid item xs={0} sm={2} md={3} lr={4} />
               <Grid item xs={12} sm={8} md={6} lr={4}>
                 <Paper className={classes.paper}>
+                  
                   <AuthForm />
                 </Paper>
               </Grid>

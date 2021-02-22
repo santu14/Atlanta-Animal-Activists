@@ -25,7 +25,7 @@ exports.signup = (req, res) => {
     errors.push({ password: "Password did not match." });
   }
   if (errors.length > 0) {
-    return res.status(422).json({ errors: errors });
+    return res.json({ errors: errors });
   }
 
   User.findOne({ email: email })
@@ -146,16 +146,16 @@ exports.signout = (req, res) => {
 exports.checkauth = (req, res) => {
   try {
     const token = req.cookies.token;
-    if (!token) return res.status(200).json({isAuth: "UNAUTHORIZED", message: "Unauthorized" })
+    if (!token) return res.json(false)
 
     const verify = jwt.verify(token, process.env.SECRETKEY)
     
     if(verify){
-      return res.status(200).json({isAuth: "AUTHORIZED", message:"User authorized"});
+      return res.json(true);
     } else {
-      return res.status(200).json({isAuth: "UNAUTHORIZED", message: "Unauthorized" });
+      return res.json(false);
     }
   } catch (err) {
-    return res.status(500).json({error: "Something went wrong with exports.checkauth"})
+    return res.json(false);
   }
 };

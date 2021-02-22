@@ -1,7 +1,15 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import API from '../utils/API'
 
-const signOut = (props) => {
+const signOut = () => {
+  const submitSignOut = (e) => {
+    e.preventDefault();
+    API.signOut().then((res) => {
+        console.log(res);
+        
+    })
+}
   return (
     <div>
       <Button
@@ -9,7 +17,7 @@ const signOut = (props) => {
         type="submit"
         fullWidth
         variant="contained"
-        onClick={props.submit}
+        onClick={submitSignOut}
       >
         Sign out
       </Button>

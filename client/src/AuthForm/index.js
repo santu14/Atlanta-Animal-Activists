@@ -9,17 +9,24 @@ import { IsAuthContext } from "./isAuthContext";
 
 
 
+
 const AuthForm = () => {
    
-
+    // Initial form state
     const initialFormState = {
         name: "", 
         email: "",
         password: ""
     }
+    // Set up our useState hook
     const [formState, setFormState] = useState(initialFormState);
-    const [state, dispatch] = useContext(IsAuthContext);
+    const [formType, setFormType] = useState("signUp");
+
+
+    // Bring in our global context items for checking authorization status
+    const {state, checkAuth} = useContext(IsAuthContext);
     
+    // On change event handler
     const handleInputChange = ({target: {name, value}}) => {
         setFormState({...formState, [name]: value})
     }
@@ -28,42 +35,48 @@ const AuthForm = () => {
         e.preventDefault();
         const {email, password} = formState
         console.log({email: email, password: password})
-        API.signIn({email: email, password: password})
-        
-
+        API.signIn({email: email, password: password}).then((res) => {
+            console.log(res);
+            checkAuth()
+        })
     }
     const submitSignUp = (e) => {
         e.preventDefault();
         const {name, email, password, password_confirmation} = formState
         console.log({email: email, password: password})
-        API.signUp({name: name, email: email, password: password, password_confirmation: password_confirmation})
-
+        API.signUp({name: name, email: email, password: password, password_confirmation: password_confirmation}).then((res) => {
+            console.log(res);
+            checkAuth()
+        })
     }
     const submitSignOut = (e) => {
         e.preventDefault();
-       
-        API.signOut()
-
+        API.signOut().then((res) => {
+            console.log(res);
+            checkAuth()
+        })
     }
+
+    const switchForm = (e) => {
+        e.preventDefault();
+        setFormType(e.target.name)
+    }
+
     useEffect(() => {
         console.log(formState);
-        API.checkAuth().then((res) => {
-            console.log(res.data.isAuth)
-            dispatch({type: res.data.isAuth})
-            console.log(state.isAuth)
-          })
+        
+        console.log(state);
     }, [formState])
 
     
     return (
         <div>
-            <SignIn handleInputChange={handleInputChange} submit={submitSignIn}/>
-            <br></br>
-            <hr></hr>
-            <SignUp handleInputChange={handleInputChange} submit={submitSignUp}/>
-            <hr></hr>
+            { formType === "signIn" && <SignIn handleInputChange={handleInputChange} submit={submitSignIn} switch={switchForm}/>}
+            { formType === "signUp" && <SignUp handleInputChange={handleInputChange} submit={submitSignUp} switch={switchForm}/>}
+            
+           
 
-            <SignOut submit={submitSignOut}/>
+            {/* <SignOut submit={submitSignOut}/> */}
         </div>
     )
 

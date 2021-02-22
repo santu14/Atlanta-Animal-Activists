@@ -1,15 +1,22 @@
 import React, { useReducer } from "react";
 
 const isAuthReducer = (state, action) => {
+  console.log("action: ", action.type);
   switch (action.type) {
-    case "UNAUTHORIZED":
-        state.isAuth = false
+    case false:
+      console.log("switch case change: ", false);
+      return {isAuth: false}
+        // state.isAuth = false
 
-    case "AUTHORIZED":
-        state.isAuth = true
+    case true:
+        console.log("switch case change: ", true);
+      return {isAuth: true}
+
+        // state.isAuth = true
 
     default:
-      return state
+      return state.isAuth 
+     
   }
 };
 

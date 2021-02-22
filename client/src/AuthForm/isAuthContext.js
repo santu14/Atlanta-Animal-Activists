@@ -5,11 +5,20 @@ import isAuthReducer from '../reducers/isAuthReducer'
 
 const AuthState = ({ children }) => {
  
-const [state, dispatch] = useReducer(isAuthReducer, {isAuth: false})
+const [state, dispatch] = useReducer(isAuthReducer, {isAuth: undefined})
 
+const checkAuth = () => {
+  API.checkAuth().then((data) => {
+    console.log("checkAuth func: ", data.data);
+    dispatch({type: data.data})
+  })
+}
+useEffect(() => {
+ checkAuth()
+}, [])
 
   return (
-    <IsAuthContext.Provider value={[state, dispatch]}>
+    <IsAuthContext.Provider value={{state, checkAuth}}>
       {children}
     </IsAuthContext.Provider>
   );
