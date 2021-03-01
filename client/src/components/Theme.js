@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core';
-import { orange, lightGreen } from '@material-ui/core/colors';
+import { orange, lightGreen, grey } from '@material-ui/core/colors';
 
 
 const theme = createMuiTheme({
@@ -15,7 +15,7 @@ const theme = createMuiTheme({
 
     }
 });
-
+const { breakpoints, typography: { pxToRem } } = theme;
 theme.props = {
     MuiButton: {
         disableElevation: false
@@ -57,7 +57,7 @@ theme.overrides = {
     MuiTooltip: {
         tooltip: {
            
-            border: '2px solid ${theme.palette.primary.main}',
+            border: `2px solid ${theme.palette.primary.main}`,
             color: theme.palette.primary.main
         },
         arrow: {
@@ -67,9 +67,17 @@ theme.overrides = {
     MuiInput:{
         root:{
             top: theme.spacing(2),
-            border: '1px solid ${grey[500]}',
+            border: `1px solid ${grey[500]}`,
         }
     },
+    MuiTypography: {
+        h1: {
+          fontSize: "5rem",
+          [breakpoints.down("xs")]: {
+            fontSize: "3rem"
+          }
+        }
+      },
 
 
 }
