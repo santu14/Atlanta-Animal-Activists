@@ -33,7 +33,6 @@ exports.signup = (req, res) => {
       // Check if user exists
       if (user) {
         return res
-          .status(422)
           .json({ errors: [{ user: "email already exists" }] });
       } else {
         const user = new User({
@@ -84,14 +83,14 @@ exports.signin = (req, res) => {
     errors.push({ error: "invalid email" });
   }
   if (errors.length > 0) {
-    return res.status(422).json({ errors: errors });
+    return res.json({ errors: errors });
   }
 
   User.findOne({ email: email })
     .then((user) => {
       // Check if user exists
       if (!user) {
-        return res.status(401).json({
+        return res.json({
           errors: [{ error: "Wrong email or password." }],
         });
       } else {
@@ -101,7 +100,6 @@ exports.signin = (req, res) => {
           .then((isMatch) => {
             if (!isMatch) {
               return res
-                .status(400)
                 .json({ errors: [{ error: "Wrong email or password." }] });
             }
             // If they match we create our access token and verify it

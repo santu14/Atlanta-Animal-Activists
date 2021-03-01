@@ -1,8 +1,14 @@
-
-.App{
+.App {
   text-align: center;
-  background-color: #282c34;
+  background: radial-gradient(
+    59.51% 59.51% at 50% 39.25%,
+    #161717 0%,
+    #444546 100%
+  );
   min-height: 100vh;
+  position: relative;
+
+  overflow-y: scroll;
   align-items: center;
   display: flex;
   flex-direction: column;

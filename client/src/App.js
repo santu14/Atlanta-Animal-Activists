@@ -15,7 +15,7 @@ function App() {
         <AuthState>
           <Grid container direction="column" spacing={3} xs={12}>
             {/* nav container */}
-            <Nav />
+            <Nav className={classes.nav}/>
 
             {/* tagline container */}
             <Grid item xs={12} container>
