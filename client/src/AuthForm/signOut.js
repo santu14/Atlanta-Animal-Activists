@@ -11,17 +11,17 @@ const signOut = () => {
     })
 }
   return (
-    <div>
+    
       <Button
         color="primary"
         type="submit"
-        fullWidth
+        
         variant="contained"
         onClick={submitSignOut}
       >
         Sign out
       </Button>
-    </div>
+   
   );
 };
 
