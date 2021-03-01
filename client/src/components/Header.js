@@ -41,7 +41,7 @@ const Nav = () => {
     { title: `Contact`, path: `/contact` },
   ];
   return (
-    <AppBar container position="sticky" className={classes.nav}>
+    <AppBar container position="static" className={classes.nav}>
       <Toolbar>
         <Container maxWidth="xl" className={classes.navDisplayFlex}>
           <IconButton edge="start" aria-label="home">

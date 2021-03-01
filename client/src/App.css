@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   background: radial-gradient(
     59.51% 59.51% at 50% 39.25%,
     #161717 0%,
@@ -7,10 +6,9 @@
   );
   min-height: 100vh;
   position: relative;
-
-  overflow-y: scroll;
   align-items: center;
   display: flex;
   flex-direction: column;
   color: #eceff1;
+  padding-bottom: 30px;
 }
