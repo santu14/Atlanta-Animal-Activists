@@ -16,12 +16,12 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import useStyles from "./Styles";
 import { IsAuthContext } from "../AuthForm/isAuthContext";
-import SignOut from "../AuthForm/signOut";
+import SignOut from "../AuthForm/SignOut";
 import Logo from "./assets/img/logo.png";
 
 const Nav = () => {
   const classes = useStyles();
-  const { state, checkAuth } = useContext(IsAuthContext);
+  const { state } = useContext(IsAuthContext);
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -80,6 +80,7 @@ const Nav = () => {
                 Donate
               </Button>
               {state.isAuth === true && <SignOut />}
+              
             </List>
           </Hidden>
 
