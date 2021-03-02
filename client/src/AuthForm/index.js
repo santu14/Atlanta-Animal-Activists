@@ -1,86 +1,134 @@
-import React, {useState, useEffect, useContext} from 'react'
-import API from '../utils/API'
-import SignIn from './SignIn'
-import SignUp from './SignUp'
-import SignOut from './signOut'
+import React, { useState, useContext, useEffect } from "react";
+import API from "../utils/API";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 
 import { IsAuthContext } from "./isAuthContext";
 
 const AuthForm = () => {
-   
-    const initialFormState = {
-        name: "", 
+  const initialFormState = {
+    name: "",
+    email: "",
+    password: "",
+  };
+  // Set up our useState hook
+  const [formState, setFormState] = useState(initialFormState);
+
+  // Bring in our global context items for checking authorization status
+  const { checkAuth } = useContext(IsAuthContext);
+
+  // On change event handler
+  const handleInputChange = ({ target: { name, value } }) => {
+    setFormState({ ...formState, [name]: value });
+  };
+
+  //  Sign In button handler
+  const submitSignIn = (e) => {
+    e.preventDefault();
+    const { email, password } = formState;
+    setHelperText(initialHelperState);
+    console.log({ email: email, password: password });
+
+    API.signIn({ email: email, password: password }).then(({ data }) => {
+        console.log("data: ", data);
+        errorHandler(data);
+        checkAuth();
+    });
+  };
+  //  Sign Up button handler
+
+  const submitSignUp = (e) => {
+    e.preventDefault();
+    const { name, email, password, password_confirmation } = formState;
+    setHelperText(initialHelperState);
+    console.log({ email: email, password: password });
+
+    API.signUp({
+      name: name,
+      email: email,
+      password: password,
+      password_confirmation: password_confirmation,
+    }).then((res) => {
+      console.log(res.data);
+      errorHandler(res.data);
+      checkAuth();
+      
+    });
+  };
+
+  // Function for switching between forms
+  const [formType, setFormType] = useState("signUp");
+
+  const switchForm = (e) => {
+    e.preventDefault();
+    setHelperText(initialHelperState)
+    setFormType(e.target.name);
+  };
+
+  // Error handling
+  const initialHelperState = {
+        error: "",
         email: "",
-        password: ""
-    }
-    // Set up our useState hook
-    const [formState, setFormState] = useState(initialFormState);
+        password: "",
+        passwordConfirm: ""
+  };
+  const [helperText, setHelperText] = useState(initialHelperState);
+
+  
+  const errorHandler =  (res) => {
      
-    // Bring in our global context items for checking authorization status
-    const {state, checkAuth} = useContext(IsAuthContext);
+    const  error =  res.errors;
     
-    // On change event handler
-    const handleInputChange = ({target: {name, value}}) => {
-        setFormState({...formState, [name]: value})
-    }
-    
-    //  Sign In button handler
-    const  submitSignIn = (e) => {
-        e.preventDefault();
-        const {email, password} = formState
-        
-        console.log({email: email, password: password})
-        
-        API.signIn({email: email, password: password}).then(({ data }) => {
-            console.log("data: ", data);
+    console.log("current errors: ", error);
+    console.log("current text: ", helperText);
 
-            checkAuth()
-        })
-    }
-    //  Sign Up button handler
+    if (error){
 
-    const submitSignUp = (e) => {
-        e.preventDefault();
-        const {name, email, password, password_confirmation} = formState
-        
-        console.log({email: email, password: password})
-        
-        API.signUp({name: name, email: email, password: password, password_confirmation: password_confirmation}).then((res) => {
-            console.log(res.data);
-            errorHandler(res.data)
-            checkAuth()
-        })
-    }
-    
-    // Function for switching between forms
-    const [formType, setFormType] = useState("signUp");
+        error.forEach(err => {
+            if (err.error) {setHelperText({...helperText, error: err.error})}
+            if (err.email) {setHelperText({...helperText,email: err.email})}
+            if (err.password) {setHelperText({...helperText, password: err.password})}
+            if (err.passwordConfirm) {setHelperText({...helperText, passwordConfirm: err.passwordConfirm})}
+             
+        });
+    } 
+   
+  };
+ 
+  useEffect(() => {
+    console.log(helperText);
+  }, [helperText])
 
-    const switchForm = (e) => {
-        e.preventDefault();
-        setFormType(e.target.name)
-    }
+  const { error, email, password, passwordConfirm } = helperText;
+  return (
+    <div>
+      {formType === "signIn" && (
+        <SignIn
+          handleInputChange={handleInputChange}
+          submit={submitSignIn}
+          switch={switchForm}
+          helper={helperText}
+          errorHelper={error}
+          emailHelper={email}
+          passwordHelper={password}
 
-    useEffect(() => {
-        console.log(formState);
-        console.log(state);
-    }, [formState])
+        />
+      )}
+      {formType === "signUp" && (
+        <SignUp
+          handleInputChange={handleInputChange}
+          submit={submitSignUp}
+          switch={switchForm}
+          helper={helperText}
+          errorHelper={error}
+          emailHelper={email}
+          passwordHelper={password}
+          passwordConfirmHelper={passwordConfirm}
 
-    // Error handling 
-    const [errors, setErrors] = useState([])
-    const errorHandler = (res) => {
-        const err = res.errors
+        />
+      )}
+    </div>
+  );
+};
 
-        err ? setErrors(...errors, err) : setErrors(...errors)
-    }
-
-    return (
-        <div>
-            { formType === "signIn" && <SignIn handleInputChange={handleInputChange} submit={submitSignIn} switch={switchForm}/>}
-            { formType === "signUp" && <SignUp handleInputChange={handleInputChange} submit={submitSignUp} switch={switchForm}/>}
-        </div>
-    )
-
-
-}
-
-export default AuthForm
+export default AuthForm;

@@ -9,13 +9,13 @@ const theme = createMuiTheme({
 
         },
         secondary: {
-            main: lightGreen['A400']
+            main: '#38393A'
         },
         type: "dark",
 
     }
 });
-const { breakpoints, typography: { pxToRem } } = theme;
+
 theme.props = {
     MuiButton: {
         disableElevation: false
@@ -48,9 +48,9 @@ theme.overrides = {
 
         },
         containedSecondary: {
-            backgroundColor: lightGreen['A400'],
+            backgroundColor: '#38393A',
             '&:hover': {
-                backgroundColor: lightGreen['A200'],
+                backgroundColor: '#808081',
             }
         }
     },
@@ -70,14 +70,7 @@ theme.overrides = {
             border: `1px solid ${grey[500]}`,
         }
     },
-    MuiTypography: {
-        h1: {
-          fontSize: "5rem",
-          [breakpoints.down("xs")]: {
-            fontSize: "3rem"
-          }
-        }
-      },
+    
 
 
 }

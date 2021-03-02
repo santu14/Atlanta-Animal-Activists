@@ -1,21 +1,24 @@
-import React from "react";
+import React, {  useContext } from "react";
 import Button from "@material-ui/core/Button";
 import API from '../utils/API'
+import { IsAuthContext } from "./isAuthContext";
 
-const signOut = () => {
+const SignOut = () => {
+  const {checkAuth} = useContext(IsAuthContext);
+
   const submitSignOut = (e) => {
-    e.preventDefault();
     API.signOut().then((res) => {
         console.log(res);
         
+    }).then(() => {
+      checkAuth();
     })
 }
   return (
     
       <Button
-        color="primary"
+        color="secondary"
         type="submit"
-        
         variant="contained"
         onClick={submitSignOut}
       >
@@ -25,4 +28,4 @@ const signOut = () => {
   );
 };
 
-export default signOut;
+export default SignOut;

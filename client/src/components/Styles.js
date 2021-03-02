@@ -9,25 +9,27 @@ const useStyles = makeStyles(() => ({
     marginBottom: "25px",
   },
   paper: {
-    backgroundColor: "#363b46",
+    backgroundColor: '#444546',
     padding: theme.spacing(2),
     textAlign: "center",
   },
 
+//   ------------- NAV ------------------------------------------
   nav: {
     backgroundImage: "linear-gradient(180deg, #0F0F0F 0%, #38393A 100%)",
     width: "100%",
     paddingTop: "20px",
+    boxShadow: " 0px 5px 6px 3px rgba(0, 0, 0, 0.25)",
   },
-
   logo: {
-    width: "50px",
+    width: "60px",
   },
   navDisplayFlex: {
     display: `flex`,
     justifyContent: `space-between`,
   },
   linkText: {
+    fontFamily: 'Tuffy',
     textDecoration: `none`,
     textTransform: `uppercase`,
     color: `white`,
@@ -40,6 +42,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: `center`,
     textTransform: `uppercase`,
   },
+//   --------- JUMBOTRON -------------------------------------
   jumbotronContainer: {
     width: "100%",
     display: "flex",
@@ -63,7 +66,6 @@ const useStyles = makeStyles(() => ({
   jumboText: {
     position: "absolute",
     fontFamily: "Franklin Gothic Heavy",
-    
     fontSize: "150px",
     lineHeight: "150px",
     textAlign: "center",
@@ -71,12 +73,10 @@ const useStyles = makeStyles(() => ({
     opacity: "0.48",
     textShadow: "0px 5px 5px rgba(0, 0, 0, 0.8)",
     [theme.breakpoints.down("md")]: {
-      
       fontSize: "90px",
       lineHeight: "90px",
     },
     [theme.breakpoints.down("xs")]: {
-        
         fontSize: "40px",
         lineHeight: "40px",
       },
