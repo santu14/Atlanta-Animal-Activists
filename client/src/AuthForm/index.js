@@ -6,6 +6,11 @@ import SignUp from "./SignUp";
 import { IsAuthContext } from "./isAuthContext";
 
 const AuthForm = () => {
+
+  useEffect(() => {
+    API.getImgs()
+  }, [])
+    // ------------------------------- Auth -------------------------------------------------
   const initialFormState = {
     name: "",
     email: "",
@@ -55,17 +60,19 @@ const AuthForm = () => {
       
     });
   };
+  // ----------------------- Form switch -----------------------------
 
-  // Function for switching between forms
   const [formType, setFormType] = useState("signUp");
-
+  
+  // Function for switching between forms
   const switchForm = (e) => {
     e.preventDefault();
     setHelperText(initialHelperState)
     setFormType(e.target.name);
   };
 
-  // Error handling
+  // ----------------------- Error handling -----------------------------
+
   const initialHelperState = {
         error: "",
         email: "",
@@ -76,14 +83,11 @@ const AuthForm = () => {
 
   
   const errorHandler =  (res) => {
-     
     const  error =  res.errors;
-    
     console.log("current errors: ", error);
     console.log("current text: ", helperText);
-
+    // if we have errors we push them to our helperText state
     if (error){
-
         error.forEach(err => {
             if (err.error) {setHelperText({...helperText, error: err.error})}
             if (err.email) {setHelperText({...helperText,email: err.email})}
@@ -95,11 +99,8 @@ const AuthForm = () => {
    
   };
  
-  useEffect(() => {
-    console.log(helperText);
-  }, [helperText])
-
   const { error, email, password, passwordConfirm } = helperText;
+  
   return (
     <div>
       {formType === "signIn" && (

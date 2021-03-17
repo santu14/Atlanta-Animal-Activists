@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   // Gets all users
   signUp: (userData) => {
@@ -20,5 +21,27 @@ export default {
   },
   checkAuth: () => {
     return axios.get("/api/checkauth");
+  },
+
+  getImgs: () => {
+    return axios.get("/api/getimgs").then( data => {
+      console.log(data);
+      return data
+    })
+  },
+
+  uploadImg: (url)=> {
+    return axios.post("/api/upload", url).then((data) => {
+      console.log(data);
+      return data
+    });
+  },
+
+  updateImg: (id, url)=> {
+    return axios.post("/api/update/" + id, url).then((data) => {
+      console.log(data);
+      return data
+    });
   }
+
 };

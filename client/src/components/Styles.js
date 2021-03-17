@@ -58,7 +58,6 @@ const useStyles = makeStyles(() => ({
       },
   },
   bull: {
-    // flexShrink: '0',
     position: "relative",
     width: "100%",
     justifyContent: "center",
@@ -81,6 +80,24 @@ const useStyles = makeStyles(() => ({
         lineHeight: "40px",
       },
   },
+  imgCard: {
+    margin: "auto",
+    height: "200px",
+    width: "200px",
+    overflow: "hidden",
+
+  },
+  imgName: {
+    marginTop:"10px",
+    width: "200px"
+  },
+  imgDisplay: {
+    marginTop: "auto",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    
+  }
 }));
 
 export default useStyles;
