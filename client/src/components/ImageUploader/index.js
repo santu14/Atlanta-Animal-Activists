@@ -1,37 +1,63 @@
 import React, { useState, useEffect } from "react";
 import UploadBox from "./UploadBox";
-import { Grid,} from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import useStyles from "../Styles";
+import Keys from "../../utils/keys";
+import { uploadFile } from "react-s3";
+import API from "../../utils/API"
 
 const ImageUploader = () => {
   const classes = useStyles();
+
+  const accessKey =  Keys.access;
+  const secretKey =  Keys.secret;
+
+  const config = {
+    bucketName: "atl-animal-activists-bucket",
+    region: "us-east-1",
+    dirName: "photos",
+    accessKeyId: accessKey,
+    secretAccessKey: secretKey,
+  };
+
+  // set two different states for img URL and name to make state management more flexible
+  // (cant get name change to not erase current url and cant do duble destructuring to my knoledge, fastest fix for the moment)
   let initialImgURLState = {
     img1: {
-      url: ""
+      url: "",
+      file: "",
     },
     img2: {
-      url: ""
+      url: "",
+      file: "",
     },
     img3: {
-      url: ""
+      url: "",
+      file: "",
     },
     img4: {
-      url: ""
+      url: "",
+      file: "",
     },
     img5: {
-      url: ""
+      url: "",
+      file: "",
     },
     img6: {
-      url: ""
+      url: "",
+      file: "",
     },
     img7: {
-      url: ""
+      url: "",
+      file: "",
     },
     img8: {
-      url: ""
+      url: "",
+      file: "",
     },
     img9: {
-      url: ""
+      url: "",
+      file: "",
     },
   };
   let initialImgNameState = {
@@ -62,46 +88,83 @@ const ImageUploader = () => {
     img9: {
       name: "",
     },
-  }
+  };
   const [imgURLState, setImgURLState] = useState(initialImgURLState);
   const [imgNameState, setImgNameState] = useState(initialImgNameState);
 
- useEffect(() => {
-   console.log(imgURLState, imgNameState);
- }, [imgURLState, imgNameState])
+  useEffect(() => {
+    console.log(imgURLState, imgNameState);
+  }, [imgURLState, imgNameState]);
+  // ---------------- handle Image change ---------------------
   const handleImgChange = ({ target: { name, files } }) => {
     console.log(files[0], name);
-    setImgURLState({ ...imgURLState,
+    // here is where the two states get called upon
+    setImgURLState({
+      ...imgURLState,
       [name]: {
         url: URL.createObjectURL(files[0]),
-      }
+        file: files[0],
+      },
     });
-   
-    setImgNameState({ ...imgNameState,
+    setImgNameState({
+      ...imgNameState,
       [name]: {
         name: files[0].name,
-      }
+      },
     });
-    
   };
-  const handleNameChange = ({ target: {name, value} }) => {
-    setImgNameState({ ...imgNameState,
+  // ---------------- Handle Image Name change ---------------------
+
+  const handleNameChange = ({ target: { name, value } }) => {
+    // here is where I cannot figure out how to duble destructure the URL so it wont get replaced if it were to be a single state component
+    setImgNameState({
+      ...imgNameState,
       [name]: {
         name: value,
-      }
+      },
     });
-    
-  }
+  };
+  // ---------------- submit image ---------------------
+
   const submitHandler = ({ target: { parentNode } }) => {
-    
-    console.log("parent: ",parentNode.name);
-    
+    console.log("parent: ", parentNode.name);
+    const name = parentNode.name;
+    let currentFile = "";
+    let currentName = "";
+    switch (name) {
+      case "img1":
+        currentFile = imgURLState.img1.file;
+        currentName = imgNameState.img1.file;
+
+        break;
+      case "img2":
+        currentFile = imgURLState.img2.file;
+        currentName = imgNameState.img2.file;
+
+        break;
+      case "img3":
+        currentFile = imgURLState.img3.file;
+        currentName = imgNameState.img3.file;
+
+        break;
+      default:
+        break;
+    }
+    console.log(currentFile);
+    uploadFile(currentFile, config)
+      .then((data) => {
+        console.log(data.location);
+        API.uploadImg({url: data.location, name: currentName }).then(()=>{
+          console.log("Saved!");
+        })
+      })
+      .catch((err) => console.error(err));
+      
   };
 
   return (
     <div>
-
-      <Grid item xs={12} className={classes.imgboxContainer}  container>
+      <Grid item xs={12} className={classes.imgboxContainer} container>
         <Grid item xs={6} sm={3}>
           <div className={classes.paper}>
             <UploadBox
@@ -111,6 +174,7 @@ const ImageUploader = () => {
               handleNameChange={handleNameChange}
               submitHandler={submitHandler}
               currentBox={"img1"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
               currentId={"icon-button-file1"}
             />
           </div>
@@ -124,8 +188,8 @@ const ImageUploader = () => {
               handleNameChange={handleNameChange}
               submitHandler={submitHandler}
               currentBox={"img2"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
               currentId={"icon-button-file2"}
-
             />
           </div>
         </Grid>
@@ -138,16 +202,13 @@ const ImageUploader = () => {
               handleImgChange={handleImgChange}
               submitHandler={submitHandler}
               currentBox={"img3"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
               currentId={"icon-button-file3"}
-
             />
           </div>
         </Grid>
       </Grid>
-      
     </div>
-      
-  
   );
 };
 

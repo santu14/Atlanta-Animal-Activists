@@ -19,14 +19,27 @@ exports.find = (req, res) => {
 };
 
 exports.upload = (req, res) => {
-  let { img } = req.body;
-  Img.findOne({ img: img })
+  let { url, name } = req.body;
+  Img.findOne({ url: url })
     .then((img) => {
       if (img) {
         return res.json({ errors: [{ img: "Image already exists" }] });
       } else {
         const img = new Img({
-          img: img,
+          url: url,
+          name: name
+        });
+        img.save()
+        .then((response) => {
+          res.status(200).json({
+            success: true,
+            result: response,
+          });
+        })
+        .catch((err) => {
+          res.status(500).json({
+            errors: [{ error: err }],
+          });
         });
       }
     })
