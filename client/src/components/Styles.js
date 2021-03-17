@@ -80,10 +80,14 @@ const useStyles = makeStyles(() => ({
         lineHeight: "40px",
       },
   },
+  imgboxContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
   imgCard: {
     margin: "auto",
-    height: "200px",
-    width: "200px",
+    height: "250px",
+    width: "250px",
     overflow: "hidden",
 
   },
