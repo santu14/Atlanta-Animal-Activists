@@ -1,45 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { Paper, Button } from "@material-ui/core";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
 import IconButton from "@material-ui/core/IconButton";
 import PhotoCamera from "@material-ui/icons/PhotoCamera";
-import useStyles from "./Styles";
+import useStyles from "../Styles";
 
-const ImgUpload = () => {
-  let initialImgState = {
-    url: "",
-    name: "",
-  };
-  const [imgState, setImgState] = useState(initialImgState);
+const ImgUpload = (props) => {
   const classes = useStyles();
-  const handleImgChange = (e) => {
-    console.log(e.target.files[0]);
-    setImgState({
-      name: e.target.files[0].name,
-      url: URL.createObjectURL(e.target.files[0]),
-    });
-  };
+
   return (
-    <div>
+    <div name={props.currentBox} newnew={props.currentBox}>
       <Paper variant="outlined" className={classes.imgCard} square>
-        <img src={imgState.url} className={classes.imgDisplay} alt="img" />
+        <img src={props.imgURL} className={classes.imgDisplay} alt="img" />
       </Paper>
       <input
+        name={props.currentBox}
         accept="text"
-        defaultValue={imgState.name}
+        defaultValue={props.imgName}
         className={classes.imgName}
+        onChange={props.handleNameChange}
         type="text"
       />
       <div>
         <input
+          name={props.currentBox}
           accept="image/*"
           style={{ display: "none" }}
-          onChange={handleImgChange}
-          id="icon-button-file"
+          onChange={props.handleImgChange}
+          id={props.currentId}
           type="file"
         />
-        <label htmlFor="icon-button-file">
+        <label htmlFor={props.currentId}>
           <IconButton
             color="primary"
             aria-label="upload picture"
@@ -48,7 +38,12 @@ const ImgUpload = () => {
             <PhotoCamera />
           </IconButton>
         </label>
-        <Button variant="contained" color="primary" component="span">
+        <Button
+          name={props.currentBox}
+          onClick={props.submitHandler}
+          variant="contained"
+          color="primary"
+        >
           Upload
         </Button>
       </div>
