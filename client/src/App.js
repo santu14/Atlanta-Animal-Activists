@@ -7,6 +7,7 @@ import useStyles from "./components/Styles";
 import AuthForm from "./AuthForm";
 import AuthState from "./AuthForm/isAuthContext";
 import Jumbotron from './components/Jumbotron'
+import ImgUpload from "./components/ImgUpload";
 function App() {
   const classes = useStyles();
 
@@ -29,11 +30,12 @@ function App() {
               </Grid>
               <Grid item xs={0} sm={2} />
             </Grid>
+              
             {/* content container */}
             <Grid item xs={12} container>
               <Grid item xs={0} sm={2} />
               <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>img test</Paper>
+                <Paper className={classes.paper}><ImgUpload/></Paper>
               </Grid>
               <Grid item xs={6} sm={5}>
                 <Paper className={classes.paper}>content test</Paper>

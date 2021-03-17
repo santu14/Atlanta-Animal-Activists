@@ -36,9 +36,9 @@ export default {
       return data
     });
   },
-  
+
   updateImg: (id, url)=> {
-    return axios.post("/api/update" + id, url).then((data) => {
+    return axios.post("/api/update/" + id, url).then((data) => {
       console.log(data);
       return data
     });
