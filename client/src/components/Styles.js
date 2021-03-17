@@ -58,7 +58,6 @@ const useStyles = makeStyles(() => ({
       },
   },
   bull: {
-    // flexShrink: '0',
     position: "relative",
     width: "100%",
     justifyContent: "center",
