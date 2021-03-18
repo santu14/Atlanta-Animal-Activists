@@ -10,7 +10,7 @@ require('dotenv').config();
 
 
 //import routes
-const authRoutes = require('./routes/APIRoutes');
+const allRoutes = require('./routes/APIRoutes');
 const { db } = require('./models/User');
 
 
@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(cors());
 
 //routes middleware
-app.use('/api', authRoutes);
+app.use('/api', allRoutes);
 
 app.listen(PORT, () => {
  console.log(`Server is running on ${PORT}`)

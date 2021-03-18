@@ -10,8 +10,8 @@ router.post('/signin', signin);
 router.get('/signout', signout);
 router.get('/checkauth', checkauth);
 router.get('/getImgs', find);
-router.get('/updateImg/:id', update)
-router.get('/uploadImg', upload)
+router.put('/updateImg/:id', update);
+router.post('/uploadImg', upload);
 
 
 

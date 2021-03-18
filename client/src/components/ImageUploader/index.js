@@ -128,38 +128,26 @@ const ImageUploader = () => {
 
   const submitHandler = ({ target: { parentNode } }) => {
     console.log("parent: ", parentNode.name);
-    const name = parentNode.name;
-    let currentFile = "";
-    let currentName = "";
-    switch (name) {
-      case "img1":
-        currentFile = imgURLState.img1.file;
-        currentName = imgNameState.img1.file;
+    const imgname = parentNode.name;
 
-        break;
-      case "img2":
-        currentFile = imgURLState.img2.file;
-        currentName = imgNameState.img2.file;
+    let { file } = imgURLState.[imgname];
+    let { name } = imgNameState.[imgname];
+   
+    // upload to s-3 bucket
+    if(file && name){
 
-        break;
-      case "img3":
-        currentFile = imgURLState.img3.file;
-        currentName = imgNameState.img3.file;
-
-        break;
-      default:
-        break;
-    }
-    console.log(currentFile);
-    uploadFile(currentFile, config)
-      .then((data) => {
-        console.log(data.location);
-        API.uploadImg({url: data.location, name: currentName }).then(()=>{
-          console.log("Saved!");
+      uploadFile(file, config)
+        .then((data) => {
+        //  save to db
+          API.uploadImg({url: data.location, name: name, location: imgname }).then(()=>{
+            console.log("Saved!");
+          })
         })
-      })
-      .catch((err) => console.error(err));
-      
+        .catch((err) => console.error(err));
+        
+    } else {
+      return
+    }
   };
 
   return (
