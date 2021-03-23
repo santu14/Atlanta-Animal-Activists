@@ -4,13 +4,13 @@ import { Grid } from "@material-ui/core";
 import useStyles from "../Styles";
 import Keys from "../../utils/keys";
 import { uploadFile } from "react-s3";
-import API from "../../utils/API"
+import API from "../../utils/API";
 
 const ImageUploader = () => {
   const classes = useStyles();
 
-  const accessKey =  Keys.access;
-  const secretKey =  Keys.secret;
+  const accessKey = Keys.access;
+  const secretKey = Keys.secret;
 
   const config = {
     bucketName: "atl-animal-activists-bucket",
@@ -89,12 +89,36 @@ const ImageUploader = () => {
       name: "",
     },
   };
+  let initialCurrentImgState = [
+    {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}
+  ]
+    
+  
+
   const [imgURLState, setImgURLState] = useState(initialImgURLState);
   const [imgNameState, setImgNameState] = useState(initialImgNameState);
+  const [currentImgs, setCurrentImgs] = useState(initialCurrentImgState);
 
   useEffect(() => {
-    console.log(imgURLState, imgNameState);
-  }, [imgURLState, imgNameState]);
+    API.getAllImgs().then(({ data }) => {
+      console.log("all imgs: ", data);
+      setCurrentImgs(data)
+    });
+  }, []);
+
+  // const getImg = (img) => {
+  //   API.getOneImg({location: img}).then(({ data }) => {
+  //    console.log("img: ",data);
+  //    setCurrentImgs({...currentImgs, [img]: {
+  //      url: data.url,
+  //      name: data.name
+  //    }})
+
+  //   });
+  // };
+  useEffect(() => {
+    console.log(imgURLState, imgNameState, currentImgs);
+  }, [imgURLState, imgNameState, currentImgs]);
   // ---------------- handle Image change ---------------------
   const handleImgChange = ({ target: { name, files } }) => {
     console.log(files[0], name);
@@ -128,38 +152,36 @@ const ImageUploader = () => {
 
   const submitHandler = ({ target: { parentNode } }) => {
     console.log("parent: ", parentNode.name);
-    const name = parentNode.name;
-    let currentFile = "";
-    let currentName = "";
-    switch (name) {
-      case "img1":
-        currentFile = imgURLState.img1.file;
-        currentName = imgNameState.img1.file;
+    const imgname = parentNode.name;
 
-        break;
-      case "img2":
-        currentFile = imgURLState.img2.file;
-        currentName = imgNameState.img2.file;
+    let { file } = imgURLState[imgname];
+    let { name } = imgNameState[imgname];
 
-        break;
-      case "img3":
-        currentFile = imgURLState.img3.file;
-        currentName = imgNameState.img3.file;
-
-        break;
-      default:
-        break;
-    }
-    console.log(currentFile);
-    uploadFile(currentFile, config)
-      .then((data) => {
-        console.log(data.location);
-        API.uploadImg({url: data.location, name: currentName }).then(()=>{
-          console.log("Saved!");
+    // upload to s-3 bucket
+    if (file && name) {
+      uploadFile(file, config)
+        .then((data) => {
+          //  save to db
+          API.uploadImg({
+            url: data.location,
+            name: name,
+            location: imgname,
+          }).then(() => {
+            console.log("Saved!");
+          });
         })
-      })
-      .catch((err) => console.error(err));
+        .catch((err) => console.error(err));
+    } else if(!file && name) {
+      API.uploadImg({
+        name: name,
+        location: imgname,
+      }).then(() => {
+        console.log("Saved!");
+      });
       
+    } else {
+      return;
+    }
   };
 
   return (
@@ -168,8 +190,8 @@ const ImageUploader = () => {
         <Grid item xs={6} sm={3}>
           <div className={classes.paper}>
             <UploadBox
-              imgURL={imgURLState.img1.url || "https://via.placeholder.com/250"}
-              imgName={imgNameState.img1.name}
+              imgURL={imgURLState.img1.url || currentImgs[0].url || "https://via.placeholder.com/250"}
+              imgName={imgNameState.img1.name || currentImgs[0].name }
               handleImgChange={handleImgChange}
               handleNameChange={handleNameChange}
               submitHandler={submitHandler}
@@ -182,8 +204,8 @@ const ImageUploader = () => {
         <Grid item xs={6} sm={3}>
           <div className={classes.paper}>
             <UploadBox
-              imgURL={imgURLState.img2.url || "https://via.placeholder.com/250"}
-              imgName={imgNameState.img2.name}
+              imgURL={imgURLState.img2.url || currentImgs[1].url || "https://via.placeholder.com/250"}
+              imgName={imgNameState.img2.name || currentImgs[1].name }
               handleImgChange={handleImgChange}
               handleNameChange={handleNameChange}
               submitHandler={submitHandler}
@@ -196,8 +218,8 @@ const ImageUploader = () => {
         <Grid item xs={6} sm={3}>
           <div className={classes.paper}>
             <UploadBox
-              imgURL={imgURLState.img3.url || "https://via.placeholder.com/250"}
-              imgName={imgNameState.img3.name}
+              imgURL={imgURLState.img3.url || currentImgs[2].url ||  "https://via.placeholder.com/250"}
+              imgName={imgNameState.img3.name || currentImgs[2].name}
               handleNameChange={handleNameChange}
               handleImgChange={handleImgChange}
               submitHandler={submitHandler}

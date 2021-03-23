@@ -6,7 +6,7 @@ import useStyles from "../Styles";
 
 const ImgUpload = (props) => {
   const classes = useStyles();
-
+  
   return (
     <div name={props.currentBox} newnew={props.currentBox}>
       <Paper variant="outlined" className={classes.imgCard} square>

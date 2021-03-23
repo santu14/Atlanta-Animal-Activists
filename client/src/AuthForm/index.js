@@ -7,9 +7,7 @@ import { IsAuthContext } from "./isAuthContext";
 
 const AuthForm = () => {
 
-  useEffect(() => {
-    API.getImgs()
-  }, [])
+  
     // ------------------------------- Auth -------------------------------------------------
   const initialFormState = {
     name: "",

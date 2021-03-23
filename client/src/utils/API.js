@@ -23,13 +23,18 @@ export default {
     return axios.get("/api/checkauth");
   },
 
-  getImgs: () => {
-    return axios.get("/api/getImgs").then( data => {
+  getOneImg: (data) => {
+    return axios.post("/api/findOneImg", data).then( data => {
       console.log(data);
       return data
     })
   },
-
+  getAllImgs: (data) => {
+    return axios.get("/api/findAllImgs").then( data => {
+      console.log(data);
+      return data
+    })
+  },
   uploadImg: (data)=> {
     return axios.post("/api/uploadImg", data).then((data) => {
       console.log(data);
