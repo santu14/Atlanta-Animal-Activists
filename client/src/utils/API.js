@@ -24,21 +24,21 @@ export default {
   },
 
   getImgs: () => {
-    return axios.get("/api/getimgs").then( data => {
+    return axios.get("/api/getImgs").then( data => {
       console.log(data);
       return data
     })
   },
 
-  uploadImg: (url)=> {
-    return axios.post("/api/upload", url).then((data) => {
+  uploadImg: (data)=> {
+    return axios.post("/api/uploadImg", data).then((data) => {
       console.log(data);
       return data
     });
   },
 
   updateImg: (id, url)=> {
-    return axios.post("/api/update/" + id, url).then((data) => {
+    return axios.post("/api/updateImg/" + id, url).then((data) => {
       console.log(data);
       return data
     });

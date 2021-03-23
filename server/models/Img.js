@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 let imgSchema = new Schema(
   {
-    img: {
+    url: {
       type: String,
       required: true,
     },
@@ -11,7 +11,10 @@ let imgSchema = new Schema(
       required: true,
     }
     
-  },
+  },{
+    timestamps: true,
+    collection: 'imgs'
+ }
   
 );
 module.exports = mongoose.model("Img", imgSchema);

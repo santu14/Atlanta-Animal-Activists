@@ -9,9 +9,9 @@ router.post('/signup', signup);
 router.post('/signin', signin);
 router.get('/signout', signout);
 router.get('/checkauth', checkauth);
-router.get('/getimgs', find);
-router.get('/update/:id', update)
-router.get('/upload', upload)
+router.get('/getImgs', find);
+router.get('/updateImg/:id', update)
+router.get('/uploadImg', upload)
 
 
 
