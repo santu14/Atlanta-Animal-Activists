@@ -12,9 +12,17 @@ exports.update = (req, res) => {
     });
 };
 
-exports.find = (req, res) => {
-  Img.find({})
-    .then((dbModel) => res.json(dbModel))
+exports.findOne = (req, res) => {
+  let { location } = req.body
+  console.log(location)
+  Img.findOne({ location: location})
+    .then((data) => res.json(data))
+    .catch((err) => res.status(422).json(err));
+};
+exports.findAll = (req, res) => {
+  
+  Img.find({}).sort([["location", 1]])
+    .then((data) => res.json(data))
     .catch((err) => res.status(422).json(err));
 };
 
