@@ -9,14 +9,18 @@ const useStyles = makeStyles(() => ({
     marginBottom: "25px",
   },
   paper: {
+<<<<<<< HEAD
     backgroundColor: '#38393A',
+=======
+    backgroundColor: "#444546",
+>>>>>>> 04ec79934e65cbc5b3e2f9f998be3f21962c23e1
     padding: theme.spacing(2),
     textAlign: "center",
     verticalAlign: "baseline",
 
   },
 
-//   ------------- NAV ------------------------------------------
+  //   ------------- NAV ------------------------------------------
   nav: {
     backgroundImage: "linear-gradient(180deg, #0F0F0F 0%, #38393A 100%)",
     width: "100%",
@@ -31,7 +35,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: `space-between`,
   },
   linkText: {
-    fontFamily: 'Tuffy',
+    fontFamily: "Tuffy",
     textDecoration: `none`,
     textTransform: `uppercase`,
     color: `white`,
@@ -44,7 +48,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: `center`,
     textTransform: `uppercase`,
   },
-//   --------- JUMBOTRON -------------------------------------
+  //   --------- JUMBOTRON -------------------------------------
   jumbotronContainer: {
     width: "100%",
     display: "flex",
@@ -53,11 +57,11 @@ const useStyles = makeStyles(() => ({
     overflow: "hidden",
     height: "500px",
     [theme.breakpoints.down("md")]: {
-        height: "200px",
-      },
+      height: "300px",
+    },
     [theme.breakpoints.down("xs")]: {
-        height: "100px",
-      },
+      height: "150px",
+    },
   },
   bull: {
     // flexShrink: '0',
@@ -84,64 +88,92 @@ left: "0px",
     },
    
     [theme.breakpoints.down("xs")]: {
-        fontSize: "40px",
-        lineHeight: "40px",
-      },
+      fontSize: "40px",
+      lineHeight: "40px",
+    },
   },
   // --------------  IMG Uploader ------------------------------
   imgboxContainer: {
     alignItems: "center",
     justifyContent: "center",
   },
+
   imgCard: {
     margin: "auto",
     height: "200px",
     width: "300px",
-    overflow: "hidden",
 
+    overflow: "hidden",
+    [theme.breakpoints.down("md")]: {
+      height: "150px",
+      width: "200px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "200px",
+      width: "300px",
+    },
   },
   imgName: {
-    marginTop:"10px",
-    width: "200px"
+    marginTop: "10px",
+    width: "200px",
+    [theme.breakpoints.down("md")]: {
+      width: "150px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "200px",
+    },
   },
   imgDisplay: {
     marginTop: "auto",
     width: "100%",
     display: "flex",
     justifyContent: "center",
-    
   },
   // --------------- Gallery ------------------------------
   galleryImgCard: {
     margin: "auto",
-    height: "600px",
+    height: "650px",
     width: "1000px",
     overflow: "hidden",
-    
-    
-
+    [theme.breakpoints.down("md")]: {
+      height: "450px",
+      width: "700px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "200px",
+      width: "300px",
+    },
   },
-  
+
   galleryImgDisplay: {
-    objectFit: "fill",
     marginTop: "auto",
     width: "100%",
-    // display: "flex",
+    height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
 
   imgTextDiv: {
     position: "absolute",
-    top: "535px",
+    bottom: "30px",
+    backgroundColor: "rgba(0,0,0,0.60)",
+    width: "1000px",
+    fontSize: "20px",
+    color: "#E0E0E0",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "15px",
+      width: "700px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "10px",
+      width: "300px",
+    },
     
-    backgroundColor: "rgba(0,0,0,0.47)",
-    width: "1000px"
   },
-  imgText:{
+  imgText: {
     paddingLeft: "20px",
-    fontSize: "20px"
-  }
+    
+  },
 }));
 
 export default useStyles;
