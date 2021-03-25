@@ -8,7 +8,7 @@ const ImgUpload = (props) => {
   const classes = useStyles();
   
   return (
-    <div name={props.currentBox} newnew={props.currentBox}>
+    <div name={props.currentBox} className={classes.imgUploadBox}>
       <Paper variant="outlined" className={classes.imgCard} square>
         <img src={props.imgURL} className={classes.imgDisplay} alt="img" />
       </Paper>
