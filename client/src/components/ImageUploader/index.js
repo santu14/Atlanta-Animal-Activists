@@ -106,14 +106,13 @@ const ImageUploader = () => {
   const [currentImgs, setCurrentImgs] = useState(initialCurrentImgState);
 
   useEffect(() => {
-    // get all images and set to current 
+    // get all images and set to current
     API.getAllImgs().then(({ data }) => {
-      if(data.length > 0){
+      if (data.length > 0) {
         console.log("all imgs: ", data);
-
         setCurrentImgs(data);
       } else {
-        return
+        return;
       }
     });
   }, []);
@@ -188,17 +187,20 @@ const ImageUploader = () => {
 
   return (
     <div>
+      
       <Grid item xs={12} className={classes.imgboxContainer} container>
-        <Grid item xs={6} sm={3}>
+        
+        <Grid item xs={11} sm={4} lg={3}>
+          
           <div className={classes.paper}>
-            {}
+          
             <UploadBox
               imgURL={
                 imgURLState.img1.url ||
                 currentImgs[0].url ||
-                "https://via.placeholder.com/250"
+                "https://via.placeholder.com/300x200"
               }
-              imgName={imgNameState.img1.name || currentImgs[0].name }
+              imgName={imgNameState.img1.name || currentImgs[0].name}
               handleImgChange={handleImgChange}
               handleNameChange={handleNameChange}
               submitHandler={submitHandler}
@@ -208,13 +210,13 @@ const ImageUploader = () => {
             />
           </div>
         </Grid>
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={11} sm={4} lg={3}>
           <div className={classes.paper}>
             <UploadBox
               imgURL={
                 imgURLState.img2.url ||
                 currentImgs[1].url ||
-                "https://via.placeholder.com/250"
+                "https://via.placeholder.com/300x200"
               }
               imgName={imgNameState.img2.name || currentImgs[1].name}
               handleImgChange={handleImgChange}
@@ -226,13 +228,13 @@ const ImageUploader = () => {
             />
           </div>
         </Grid>
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={11} sm={4} lg={3}>
           <div className={classes.paper}>
             <UploadBox
               imgURL={
                 imgURLState.img3.url ||
                 currentImgs[2].url ||
-                "https://via.placeholder.com/250"
+                "https://via.placeholder.com/300x200"
               }
               imgName={imgNameState.img3.name || currentImgs[2].name}
               handleNameChange={handleNameChange}
@@ -241,6 +243,124 @@ const ImageUploader = () => {
               currentBox={"img3"}
               // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
               currentId={"icon-button-file3"}
+            />
+          </div>
+        </Grid>
+      </Grid>
+
+      {/* -------------------------- next set of uploaders ------------------------------------------ */}
+      <Grid item xs={12} className={classes.imgboxContainer} container>
+        <Grid item xs={11} sm={4} lg={3}>
+          <div className={classes.paper}>
+            {}
+            <UploadBox
+              imgURL={
+                imgURLState.img4.url ||
+                currentImgs[3].url ||
+                "https://via.placeholder.com/300x200"
+              }
+              imgName={imgNameState.img4.name || currentImgs[3].name}
+              handleImgChange={handleImgChange}
+              handleNameChange={handleNameChange}
+              submitHandler={submitHandler}
+              currentBox={"img4"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
+              currentId={"icon-button-file4"}
+            />
+          </div>
+        </Grid>
+        <Grid item xs={11} sm={4} lg={3}>
+          <div className={classes.paper}>
+            <UploadBox
+              imgURL={
+                imgURLState.img5.url ||
+                currentImgs[4].url ||
+                "https://via.placeholder.com/300x200"
+              }
+              imgName={imgNameState.img5.name || currentImgs[4].name}
+              handleImgChange={handleImgChange}
+              handleNameChange={handleNameChange}
+              submitHandler={submitHandler}
+              currentBox={"img5"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
+              currentId={"icon-button-file5"}
+            />
+          </div>
+        </Grid>
+        <Grid item xs={11} sm={4} lg={3}>
+          <div className={classes.paper}>
+            <UploadBox
+              imgURL={
+                imgURLState.img6.url ||
+                currentImgs[5].url ||
+                "https://via.placeholder.com/300x200"
+              }
+              imgName={imgNameState.img6.name || currentImgs[5].name}
+              handleNameChange={handleNameChange}
+              handleImgChange={handleImgChange}
+              submitHandler={submitHandler}
+              currentBox={"img6"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
+              currentId={"icon-button-file6"}
+            />
+          </div>
+        </Grid>
+      </Grid>
+      
+      {/* -------------------------- next set of uploaders ------------------------------------------ */}
+      <Grid item xs={12}  className={classes.imgboxContainer} container>
+        <Grid item xs={11} sm={4} lg={3}>
+          <div className={classes.paper}>
+            {}
+            <UploadBox
+              imgURL={
+                imgURLState.img7.url ||
+                currentImgs[6].url ||
+                "https://via.placeholder.com/300x200"
+              }
+              imgName={imgNameState.img7.name || currentImgs[6].name}
+              handleImgChange={handleImgChange}
+              handleNameChange={handleNameChange}
+              submitHandler={submitHandler}
+              currentBox={"img7"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
+              currentId={"icon-button-file7"}
+            />
+          </div>
+        </Grid>
+        <Grid item xs={11} sm={4} lg={3}>
+          <div className={classes.paper}>
+            <UploadBox
+              imgURL={
+                imgURLState.img8.url ||
+                currentImgs[7].url ||
+                "https://via.placeholder.com/300x200"
+              }
+              imgName={imgNameState.img8.name || currentImgs[7].name}
+              handleImgChange={handleImgChange}
+              handleNameChange={handleNameChange}
+              submitHandler={submitHandler}
+              currentBox={"img8"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
+              currentId={"icon-button-file8"}
+            />
+          </div>
+        </Grid>
+        <Grid item xs={11} sm={4} lg={3}>
+          <div className={classes.paper}>
+            <UploadBox
+              imgURL={
+                imgURLState.img9.url ||
+                currentImgs[8].url ||
+                "https://via.placeholder.com/300x200"
+              }
+              imgName={imgNameState.img9.name || currentImgs[8].name}
+              handleNameChange={handleNameChange}
+              handleImgChange={handleImgChange}
+              submitHandler={submitHandler}
+              currentBox={"img9"}
+              // had to make the upload button ID a prop that changes as it kept rejectiong other props due to it being an ID
+              currentId={"icon-button-file9"}
             />
           </div>
         </Grid>
