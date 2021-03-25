@@ -19,8 +19,8 @@ exports.findOne = (req, res) => {
     .then((data) => res.json(data))
     .catch((err) => res.status(422).json(err));
 };
+
 exports.findAll = (req, res) => {
-  
   Img.find({}).sort([["location", 1]])
     .then((data) => res.json(data))
     .catch((err) => res.status(422).json(err));

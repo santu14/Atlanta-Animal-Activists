@@ -8,6 +8,7 @@ import AuthForm from "./AuthForm";
 import AuthState from "./AuthForm/isAuthContext";
 import Jumbotron from './components/Jumbotron'
 import ImageUploader from "./components/ImageUploader/index.js";
+import Gallery from "./components/Gallery";
 
 function App() {
   const classes = useStyles();
@@ -31,7 +32,7 @@ function App() {
               </Grid>
               <Grid item xs={0} sm={2} />
             </Grid>
-              
+              <Gallery/>
             {/* content container */}
             
               <ImageUploader/>
