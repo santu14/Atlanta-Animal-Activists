@@ -88,14 +88,15 @@ left: "0px",
         lineHeight: "40px",
       },
   },
+  // --------------  IMG Uploader ------------------------------
   imgboxContainer: {
     alignItems: "center",
     justifyContent: "center",
   },
   imgCard: {
     margin: "auto",
-    height: "250px",
-    width: "250px",
+    height: "200px",
+    width: "300px",
     overflow: "hidden",
 
   },
@@ -109,6 +110,37 @@ left: "0px",
     display: "flex",
     justifyContent: "center",
     
+  },
+  // --------------- Gallery ------------------------------
+  galleryImgCard: {
+    margin: "auto",
+    height: "600px",
+    width: "1000px",
+    overflow: "hidden",
+    
+    
+
+  },
+  
+  galleryImgDisplay: {
+    objectFit: "fill",
+    marginTop: "auto",
+    width: "100%",
+    // display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  imgTextDiv: {
+    position: "absolute",
+    top: "535px",
+    
+    backgroundColor: "rgba(0,0,0,0.47)",
+    width: "1000px"
+  },
+  imgText:{
+    paddingLeft: "20px",
+    fontSize: "20px"
   }
 }));
 

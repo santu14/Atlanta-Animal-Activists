@@ -90,35 +90,37 @@ const ImageUploader = () => {
     },
   };
   let initialCurrentImgState = [
-    {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}, {url: "", name: ""}
-  ]
-    
-  
+    { url: "", name: "" },
+    { url: "", name: "" },
+    { url: "", name: "" },
+    { url: "", name: "" },
+    { url: "", name: "" },
+    { url: "", name: "" },
+    { url: "", name: "" },
+    { url: "", name: "" },
+    { url: "", name: "" },
+  ];
 
   const [imgURLState, setImgURLState] = useState(initialImgURLState);
   const [imgNameState, setImgNameState] = useState(initialImgNameState);
   const [currentImgs, setCurrentImgs] = useState(initialCurrentImgState);
 
   useEffect(() => {
+    // get all images and set to current 
     API.getAllImgs().then(({ data }) => {
-      console.log("all imgs: ", data);
-      setCurrentImgs(data)
+      if(data.length > 0){
+        console.log("all imgs: ", data);
+
+        setCurrentImgs(data);
+      } else {
+        return
+      }
     });
   }, []);
 
-  // const getImg = (img) => {
-  //   API.getOneImg({location: img}).then(({ data }) => {
-  //    console.log("img: ",data);
-  //    setCurrentImgs({...currentImgs, [img]: {
-  //      url: data.url,
-  //      name: data.name
-  //    }})
-
-  //   });
-  // };
-  useEffect(() => {
-    console.log(imgURLState, imgNameState, currentImgs);
-  }, [imgURLState, imgNameState, currentImgs]);
+  // useEffect(() => {
+  //   console.log(imgURLState, imgNameState, currentImgs);
+  // }, [imgURLState, imgNameState, currentImgs]);
   // ---------------- handle Image change ---------------------
   const handleImgChange = ({ target: { name, files } }) => {
     console.log(files[0], name);
@@ -171,14 +173,14 @@ const ImageUploader = () => {
           });
         })
         .catch((err) => console.error(err));
-    } else if(!file && name) {
+    } else if (!file && name) {
+      // if no img added just change the name
       API.uploadImg({
         name: name,
         location: imgname,
       }).then(() => {
         console.log("Saved!");
       });
-      
     } else {
       return;
     }
@@ -189,8 +191,13 @@ const ImageUploader = () => {
       <Grid item xs={12} className={classes.imgboxContainer} container>
         <Grid item xs={6} sm={3}>
           <div className={classes.paper}>
+            {}
             <UploadBox
-              imgURL={imgURLState.img1.url || currentImgs[0].url || "https://via.placeholder.com/250"}
+              imgURL={
+                imgURLState.img1.url ||
+                currentImgs[0].url ||
+                "https://via.placeholder.com/250"
+              }
               imgName={imgNameState.img1.name || currentImgs[0].name }
               handleImgChange={handleImgChange}
               handleNameChange={handleNameChange}
@@ -204,8 +211,12 @@ const ImageUploader = () => {
         <Grid item xs={6} sm={3}>
           <div className={classes.paper}>
             <UploadBox
-              imgURL={imgURLState.img2.url || currentImgs[1].url || "https://via.placeholder.com/250"}
-              imgName={imgNameState.img2.name || currentImgs[1].name }
+              imgURL={
+                imgURLState.img2.url ||
+                currentImgs[1].url ||
+                "https://via.placeholder.com/250"
+              }
+              imgName={imgNameState.img2.name || currentImgs[1].name}
               handleImgChange={handleImgChange}
               handleNameChange={handleNameChange}
               submitHandler={submitHandler}
@@ -218,7 +229,11 @@ const ImageUploader = () => {
         <Grid item xs={6} sm={3}>
           <div className={classes.paper}>
             <UploadBox
-              imgURL={imgURLState.img3.url || currentImgs[2].url ||  "https://via.placeholder.com/250"}
+              imgURL={
+                imgURLState.img3.url ||
+                currentImgs[2].url ||
+                "https://via.placeholder.com/250"
+              }
               imgName={imgNameState.img3.name || currentImgs[2].name}
               handleNameChange={handleNameChange}
               handleImgChange={handleImgChange}
