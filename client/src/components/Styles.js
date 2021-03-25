@@ -88,6 +88,28 @@ left: "0px",
         lineHeight: "40px",
       },
   },
+  imgboxContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  imgCard: {
+    margin: "auto",
+    height: "250px",
+    width: "250px",
+    overflow: "hidden",
+
+  },
+  imgName: {
+    marginTop:"10px",
+    width: "200px"
+  },
+  imgDisplay: {
+    marginTop: "auto",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    
+  }
 }));
 
 export default useStyles;
