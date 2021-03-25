@@ -16,19 +16,22 @@ function App() {
         <AuthState>
           <Grid container direction="column" spacing={3} xs={12}>
             {/* nav container */}
-            <Nav className={classes.nav}/>
+           
             
+            <Nav className={classes.nav}/>
+           
 
-                <Jumbotron/>
-             
+              
+            
             {/* tagline container */}
             <Grid item xs={12} container>
               <Grid item xs={0} sm={2} />
               <Grid item xs={12} sm={12} lg={12}>
-
+              <Jumbotron/>
               </Grid>
               <Grid item xs={0} sm={2} />
             </Grid>
+            
             {/* content container */}
             <Grid item xs={12} container>
               <Grid item xs={0} sm={2} />

@@ -9,9 +9,11 @@ const useStyles = makeStyles(() => ({
     marginBottom: "25px",
   },
   paper: {
-    backgroundColor: '#444546',
+    backgroundColor: '#38393A',
     padding: theme.spacing(2),
     textAlign: "center",
+    verticalAlign: "baseline",
+
   },
 
 //   ------------- NAV ------------------------------------------
@@ -51,16 +53,19 @@ const useStyles = makeStyles(() => ({
     overflow: "hidden",
     height: "500px",
     [theme.breakpoints.down("md")]: {
-        height: "300px",
+        height: "200px",
       },
     [theme.breakpoints.down("xs")]: {
-        height: "150px",
+        height: "100px",
       },
   },
   bull: {
     // flexShrink: '0',
-    position: "relative",
+    position: "absolute",
     width: "100%",
+    verticalAlign: "baseline",
+left: "0px",
+
     justifyContent: "center",
   },
   jumboText: {
@@ -72,10 +77,12 @@ const useStyles = makeStyles(() => ({
     color: "#FFFFFF",
     opacity: "0.48",
     textShadow: "0px 5px 5px rgba(0, 0, 0, 0.8)",
+  
     [theme.breakpoints.down("md")]: {
       fontSize: "90px",
       lineHeight: "90px",
     },
+   
     [theme.breakpoints.down("xs")]: {
         fontSize: "40px",
         lineHeight: "40px",
