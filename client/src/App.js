@@ -21,17 +21,10 @@ function App() {
             {/* nav container */}
             <Nav className={classes.nav}/>
             
-
-                <Jumbotron/>
-             
             {/* tagline container */}
-            <Grid item xs={12} container>
-              <Grid item xs={0} sm={2} />
-              <Grid item xs={12} sm={12} lg={12}>
-
-              </Grid>
-              <Grid item xs={0} sm={2} />
-            </Grid>
+   
+              <Jumbotron/>
+         
               <Gallery/>
             {/* content container */}
             
