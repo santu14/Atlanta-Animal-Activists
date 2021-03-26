@@ -9,11 +9,7 @@ const useStyles = makeStyles(() => ({
     marginBottom: "25px",
   },
   paper: {
-<<<<<<< HEAD
-    backgroundColor: '#38393A',
-=======
     backgroundColor: "#444546",
->>>>>>> 04ec79934e65cbc5b3e2f9f998be3f21962c23e1
     padding: theme.spacing(2),
     textAlign: "center",
     verticalAlign: "baseline",
