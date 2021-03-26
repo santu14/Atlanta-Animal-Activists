@@ -17,8 +17,9 @@ const useStyles = makeStyles(() => ({
   aboutPaper: {
     backgroundColor: "#444546",
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: "end",
     verticalAlign: "baseline",
+    
  
     height: "209px",
     left: "314px",
@@ -60,13 +61,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden",
-    height: "500px",
-    [theme.breakpoints.down("md")]: {
-      height: "300px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      height: "150px",
-    },
+   
   },
   bull: {
     // flexShrink: '0',
@@ -87,15 +82,16 @@ const useStyles = makeStyles(() => ({
     opacity: "0.48",
     textShadow: "0px 5px 5px rgba(0, 0, 0, 0.8)",
 
+    
     [theme.breakpoints.down("md")]: {
-      fontSize: "90px",
-      lineHeight: "90px",
+      fontSize: "100px",
+      lineHeight: "100px",
     },
-
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       fontSize: "40px",
       lineHeight: "40px",
     },
+
   },
   // --------------  IMG Uploader ------------------------------
   imgboxContainer: {
