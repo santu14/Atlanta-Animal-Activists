@@ -54,7 +54,7 @@ const Nav = () => {
           {/* ----------------Regular menu ----------------------------- */}
 
           <Hidden xsDown>
-            <List
+            <List className={classes.navList}
               component="nav"
               aria-labelledby="main navigation"
               className={classes.linkDisplay}
@@ -71,10 +71,9 @@ const Nav = () => {
                   </ListItem>
                 </a>
               ))}
-              <Button
+              <Button className={classes.navDonateBtn}
                 color="primary"
                 type="submit"
-                style={{ marginRight: "10px" }}
                 variant="contained"
               >
                 Donate

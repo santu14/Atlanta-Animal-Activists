@@ -39,7 +39,18 @@ const useStyles = makeStyles(() => ({
   linkDisplay: {
     display: `flex`,
     justifyContent: `space-between`,
+
   },
+
+  navDonateBtn: {
+
+    width: '92px',
+    height: '38.08px',
+
+    top: '5px',
+    filter: 'drop - shadow(4px 5px 5px rgba(0, 0, 0, 0.25))',
+  },
+
   menuSelections: {
     justifyContent: `center`,
     textTransform: `uppercase`,
@@ -64,7 +75,7 @@ const useStyles = makeStyles(() => ({
     position: "absolute",
     width: "100%",
     verticalAlign: "baseline",
-left: "0px",
+    left: "0px",
 
     justifyContent: "center",
   },
@@ -77,12 +88,12 @@ left: "0px",
     color: "#FFFFFF",
     opacity: "0.48",
     textShadow: "0px 5px 5px rgba(0, 0, 0, 0.8)",
-  
+
     [theme.breakpoints.down("md")]: {
       fontSize: "90px",
       lineHeight: "90px",
     },
-   
+
     [theme.breakpoints.down("xs")]: {
       fontSize: "40px",
       lineHeight: "40px",
@@ -164,11 +175,11 @@ left: "0px",
       fontSize: "10px",
       width: "300px",
     },
-    
+
   },
   imgText: {
     paddingLeft: "20px",
-    
+
   },
 }));
 
