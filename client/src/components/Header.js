@@ -16,7 +16,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import useStyles from "./Styles";
 import { IsAuthContext } from "../AuthForm/isAuthContext";
-import SignOut from "../AuthForm/SignOut";
+import SignOut from "../AuthForm/signOut";
 import Logo from "./assets/img/logo.png";
 
 const Nav = () => {

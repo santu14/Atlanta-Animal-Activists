@@ -13,7 +13,16 @@ const useStyles = makeStyles(() => ({
     padding: theme.spacing(2),
     textAlign: "center",
     verticalAlign: "baseline",
-
+  },
+  aboutPaper: {
+    backgroundColor: "#444546",
+    padding: theme.spacing(2),
+    textAlign: "center",
+    verticalAlign: "baseline",
+ 
+    height: "209px",
+    left: "314px",
+    top: "624px",
   },
 
   //   ------------- NAV ------------------------------------------
@@ -61,10 +70,10 @@ const useStyles = makeStyles(() => ({
   },
   bull: {
     // flexShrink: '0',
-    position: "absolute",
+    position: "relative",
     width: "100%",
     verticalAlign: "baseline",
-left: "0px",
+    left: "0px",
 
     justifyContent: "center",
   },
@@ -77,12 +86,12 @@ left: "0px",
     color: "#FFFFFF",
     opacity: "0.48",
     textShadow: "0px 5px 5px rgba(0, 0, 0, 0.8)",
-  
+
     [theme.breakpoints.down("md")]: {
       fontSize: "90px",
       lineHeight: "90px",
     },
-   
+
     [theme.breakpoints.down("xs")]: {
       fontSize: "40px",
       lineHeight: "40px",
@@ -164,11 +173,11 @@ left: "0px",
       fontSize: "10px",
       width: "300px",
     },
-    
+
   },
   imgText: {
     paddingLeft: "20px",
-    
+
   },
 }));
 

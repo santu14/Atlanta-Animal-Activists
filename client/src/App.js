@@ -6,7 +6,8 @@ import theme from "./components/Theme";
 import useStyles from "./components/Styles";
 import AuthForm from "./AuthForm";
 import AuthState from "./AuthForm/isAuthContext";
-import Jumbotron from './components/Jumbotron'
+import Jumbotron from './components/Jumbotron';
+import About from './components/About';
 import ImageUploader from "./components/ImageUploader/index.js";
 import Gallery from "./components/Gallery";
 
@@ -24,6 +25,8 @@ function App() {
             {/* tagline container */}
    
               <Jumbotron/>
+
+              <About/>
          
               <Gallery/>
             {/* content container */}
