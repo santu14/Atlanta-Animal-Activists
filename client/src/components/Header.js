@@ -53,7 +53,7 @@ const Nav = () => {
           </IconButton>
           {/* ----------------Regular menu ----------------------------- */}
 
-          <Hidden xsDown>
+          <Hidden smDown>
             <List
               component="nav"
               aria-labelledby="main navigation"
@@ -85,7 +85,7 @@ const Nav = () => {
           </Hidden>
 
           {/* ----------------Hamburger menu ----------------------------- */}
-          <Hidden smUp>
+          <Hidden mdUp>
             <IconButton
               aria-controls="fade-menu"
               aria-haspopup="true"
