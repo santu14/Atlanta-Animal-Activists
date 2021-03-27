@@ -16,7 +16,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import useStyles from "./Styles";
 import { IsAuthContext } from "../AuthForm/isAuthContext";
-import SignOut from "../AuthForm/SignOut";
+import SignOut from "../AuthForm/signOut";
 import Logo from "./assets/img/logo.png";
 
 const Nav = () => {
@@ -53,7 +53,7 @@ const Nav = () => {
           </IconButton>
           {/* ----------------Regular menu ----------------------------- */}
 
-          <Hidden xsDown>
+          <Hidden smDown>
             <List
               component="nav"
               aria-labelledby="main navigation"
@@ -72,10 +72,10 @@ const Nav = () => {
                 </a>
               ))}
               <Button
-                color="primary"
+                color="secondary"
                 type="submit"
                 style={{ marginRight: "10px" }}
-                variant="contained"
+                variant="outlined"
               >
                 Donate
               </Button>
@@ -85,7 +85,7 @@ const Nav = () => {
           </Hidden>
 
           {/* ----------------Hamburger menu ----------------------------- */}
-          <Hidden smUp>
+          <Hidden mdUp>
             <IconButton
               aria-controls="fade-menu"
               aria-haspopup="true"

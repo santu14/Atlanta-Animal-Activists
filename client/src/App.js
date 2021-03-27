@@ -10,6 +10,8 @@ import Jumbotron from './components/Jumbotron'
 import ImageUploader from "./components/ImageUploader/index.js";
 import Gallery from "./components/Gallery";
 import AdminButton from "./components/AdminButton";
+import About from './components/About';
+
 
 function App() {
   const classes = useStyles();
@@ -22,21 +24,17 @@ function App() {
             {/* nav container */}
             <Nav className={classes.nav}/>
             
-
-                <Jumbotron/>
-             
             {/* tagline container */}
-            <Grid item xs={12} container>
-              <Grid item xs={0} sm={2} />
-              <Grid item xs={12} sm={12} lg={12}>
+   
+              <Jumbotron/>
 
-              </Grid>
-              <Grid item xs={0} sm={2} />
-            </Grid>
+              <About/>
               <Gallery/>
-            {/* content container */}
+          
+         
+              {/*
             
-              <ImageUploader/>
+              <ImageUploader/> */}
               
             
             {/* auth form container */}

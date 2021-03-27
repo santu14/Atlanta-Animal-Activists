@@ -12,7 +12,11 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#444546",
     padding: theme.spacing(2),
     textAlign: "center",
+    verticalAlign: "baseline",
+    borderRadius: '0',
   },
+  
+
 
   //   ------------- NAV ------------------------------------------
   nav: {
@@ -23,24 +27,34 @@ const useStyles = makeStyles(() => ({
   },
   logo: {
     width: "60px",
+    [theme.breakpoints.down("xs")]: {
+      width: "25px",
+    },
   },
   navDisplayFlex: {
     display: `flex`,
     justifyContent: `space-between`,
   },
   linkText: {
-    fontFamily: "Tuffy",
     textDecoration: `none`,
     textTransform: `uppercase`,
     color: `white`,
+    display: `flex`,
+    height: '27px',
+
   },
   linkDisplay: {
     display: `flex`,
     justifyContent: `space-between`,
+    height: '27px',
+    top: '15px',
+
+
   },
   menuSelections: {
     justifyContent: `center`,
     textTransform: `uppercase`,
+
   },
   //   --------- JUMBOTRON -------------------------------------
   jumbotronContainer: {
@@ -48,19 +62,15 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    overflow: "hidden",
-    height: "500px",
-    [theme.breakpoints.down("md")]: {
-      height: "300px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      height: "150px",
-    },
+
+
   },
   bull: {
+    // flexShrink: '0',
     position: "relative",
     width: "100%",
-    justifyContent: "center",
+
+ 
   },
   jumboText: {
     position: "absolute",
@@ -71,15 +81,93 @@ const useStyles = makeStyles(() => ({
     color: "#FFFFFF",
     opacity: "0.48",
     textShadow: "0px 5px 5px rgba(0, 0, 0, 0.8)",
+
+
     [theme.breakpoints.down("md")]: {
-      fontSize: "90px",
-      lineHeight: "90px",
+      fontSize: "100px",
+      lineHeight: "100px",
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       fontSize: "40px",
       lineHeight: "40px",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "24px",
+      lineHeight: "40px",
+    },
+
   },
+  // --------------  About ------------------------------
+  aboutCont: {
+    marginBottom: "150px",
+    display: "flex",
+  },
+  aboutPaper: {
+    backgroundColor: "#444546",
+    padding: theme.spacing(2),
+    textAlign: "center",
+    height: "129px",
+    left: "314px",
+    top: "624px",
+    borderBottom: '10px solid #E25201',
+    borderRadius: '0',
+    [theme.breakpoints.down("xs")]: {
+
+      height: "20px",
+      marginBottom: "10px",
+    },
+  },
+  aboutTitle: {
+    fontFamily: 'Varela Round',
+    position: "relative",
+    fontSize: '38px',
+    fontWeight: '400',
+    lineHeight: '230px',
+    letterSpacing: '0em',
+    display: "flex",
+    flexDirection: "column",
+    marginTop: 'auto',
+    color: '#FF8E26',
+    [theme.breakpoints.down("md")]: {
+      fontSize: "26px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
+      lineHeight: '50px',
+    },
+  },
+  aboutText: {
+    position: 'relative',
+    width: '70%',
+    left: '50px',
+    right: '50px',
+    top: '103px',
+    fontSize: '18px',
+    display: 'flex',
+    alignItems: 'flex-end',
+    color: '#C4C4C4',
+    
+    [theme.breakpoints.down("md")]: {
+      fontSize: "16px",
+      lineHeight: "17px",
+      top: '33px',
+
+    },
+    [theme.breakpoints.down("xs")]: {
+      left: '13px',
+      right: '13px',
+      width: '90%',
+      alignItems: 'center',
+
+
+    },
+
+
+  },
+
+
+
+
   // --------------  IMG Uploader ------------------------------
   imgboxContainer: {
     alignItems: "center",
@@ -157,7 +245,7 @@ const useStyles = makeStyles(() => ({
       fontSize: "10px",
       width: "300px",
     },
-    
+
   },
   imgText: {
     fontSize: "25px",
