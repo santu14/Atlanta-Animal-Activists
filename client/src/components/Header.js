@@ -72,10 +72,10 @@ const Nav = () => {
                 </a>
               ))}
               <Button
-                color="primary"
+                color="secondary"
                 type="submit"
                 style={{ marginRight: "10px" }}
-                variant="contained"
+                variant="outlined"
               >
                 Donate
               </Button>
