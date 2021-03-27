@@ -8,8 +8,8 @@ import AuthForm from "./AuthForm";
 import AuthState from "./AuthForm/isAuthContext";
 import Jumbotron from './components/Jumbotron';
 import About from './components/About';
-import ImageUploader from "./components/ImageUploader/index.js";
-import Gallery from "./components/Gallery";
+// import ImageUploader from "./components/ImageUploader/index.js";
+// import Gallery from "./components/Gallery";
 
 function App() {
   const classes = useStyles();
@@ -28,10 +28,10 @@ function App() {
 
               <About/>
          
-              <Gallery/>
-            {/* content container */}
+              {/* <Gallery/>
+          
             
-              <ImageUploader/>
+              <ImageUploader/> */}
               
             
             {/* auth form container */}
