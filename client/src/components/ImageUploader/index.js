@@ -110,7 +110,13 @@ const ImageUploader = () => {
     API.getAllImgs().then(({ data }) => {
       if (data.length > 0) {
         console.log("all imgs: ", data);
-        setCurrentImgs(data);
+        
+        let newArr = [...currentImgs]
+        data.forEach((img, i) => {
+          console.log(img,i);
+          newArr[i] = img
+        });
+        setCurrentImgs(newArr);
       } else {
         return;
       }

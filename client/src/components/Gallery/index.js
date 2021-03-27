@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-material-ui-carousel";
 import ImgHolder from "./ImgHolder";
-import API from "../../utils/API"
+import API from "../../utils/API";
+import { Container } from "@material-ui/core";
 const Gallery = () => {
   let initialCurrentImgState = [
     { url: "", name: "" },
@@ -23,11 +24,13 @@ const Gallery = () => {
     });
   }, []);
   return (
-    <Carousel>
-      {currentImgs.map((img, i) => (
-        <ImgHolder key={i} imgurl={img.url} imgname={img.name} />
-      ))}
-    </Carousel>
+    <Container>
+      <Carousel>
+        {currentImgs.map((img, i) => (
+          <ImgHolder key={i} imgurl={img.url} imgname={img.name} />
+        ))}
+      </Carousel>
+    </Container>
   );
 };
 

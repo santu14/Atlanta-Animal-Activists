@@ -9,6 +9,7 @@ import AuthState from "./AuthForm/isAuthContext";
 import Jumbotron from './components/Jumbotron'
 import ImageUploader from "./components/ImageUploader/index.js";
 import Gallery from "./components/Gallery";
+import AdminButton from "./components/AdminButton";
 
 function App() {
   const classes = useStyles();
@@ -44,7 +45,8 @@ function App() {
               <Grid item xs={12} sm={8} md={6} lr={4}>
                 <Paper className={classes.paper}>
                   
-                  <AuthForm />
+                  {/* <AuthForm /> */}
+                  <AdminButton/>
                 </Paper>
               </Grid>
               <Grid item xs={0} sm={2} md={3} lr={4} />
