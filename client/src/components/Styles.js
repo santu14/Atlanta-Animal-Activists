@@ -156,18 +156,11 @@ const useStyles = makeStyles(() => ({
       fontSize: "16px",
       lineHeight: "17px",
       top: '75px',
-
     },
     [theme.breakpoints.down("xs")]: {
-      // paddingLeft:'50px',
-      // paddingRight:'50px',
       top: '30px',
       alignItems: 'center',
-
-
     },
-
-
   },
   // --------------  Participate ------------------------------
   partCont: {
@@ -177,19 +170,13 @@ const useStyles = makeStyles(() => ({
   },
   partPaper: {
     backgroundColor: "#444546",
-
     textAlign: "center",
-    height: '607px',
+    height: '507px',
     width: '100%',
     marginTop: '80px',
     borderRadius: '0',
 
-    [theme.breakpoints.down("md")]: {
-      height: "400px",
-
-    },
     [theme.breakpoints.down("sm")]: {
-      height: "400px",
       marginTop: '20px',
     },
     [theme.breakpoints.down("xs")]: {
@@ -228,10 +215,9 @@ const useStyles = makeStyles(() => ({
     fontSize: '18px',
     display: 'flex',
     color: '#C4C4C4',
-    bottom:'80px',
-    //  paddingLeft:'50px',
-    //  paddingRight:'50px',
+    top: '50px',
     padding: '20px',
+    
 
     [theme.breakpoints.down("md")]: {
       fontSize: "16px",
@@ -240,16 +226,9 @@ const useStyles = makeStyles(() => ({
 
     },
     [theme.breakpoints.down("xs")]: {
-
-      width: '80vw',
       height: '250%',
-      top: '80px',
-
-
-
-
+      top: '20px',
     },
-
 
   },
   partLine: {
@@ -264,12 +243,12 @@ const useStyles = makeStyles(() => ({
     alignSelf: 'right',
     left: '350px',
     position: 'relative',
-    top: '380px',
+    top: '50%',
     width: '100%',
+   
     [theme.breakpoints.down("sm")]: {
       width: '0',
-    },
-
+       },
 
   },
 
