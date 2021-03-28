@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     verticalAlign: "baseline",
     borderRadius: '0',
   },
-  
+
 
 
   //   ------------- NAV ------------------------------------------
@@ -70,7 +70,7 @@ const useStyles = makeStyles(() => ({
     position: "relative",
     width: "100%",
 
- 
+
   },
   jumboText: {
     position: "absolute",
@@ -101,6 +101,9 @@ const useStyles = makeStyles(() => ({
   aboutCont: {
     marginBottom: "150px",
     display: "flex",
+    [theme.breakpoints.down("xs")]: {
+
+    },
   },
   aboutPaper: {
     backgroundColor: "#444546",
@@ -138,25 +141,27 @@ const useStyles = makeStyles(() => ({
   },
   aboutText: {
     position: 'relative',
-    width: '70%',
-    left: '50px',
-    right: '50px',
+    textAlign: 'center',
+    padding: '20px',
+
+    //   paddingLeft:'70px',
+    //  paddingRight:'70px',
     top: '103px',
     fontSize: '18px',
     display: 'flex',
-    alignItems: 'flex-end',
+
     color: '#C4C4C4',
-    
+
     [theme.breakpoints.down("md")]: {
       fontSize: "16px",
       lineHeight: "17px",
-      top: '33px',
+      top: '75px',
 
     },
     [theme.breakpoints.down("xs")]: {
-      left: '13px',
-      right: '13px',
-      width: '90%',
+      // paddingLeft:'50px',
+      // paddingRight:'50px',
+      top: '30px',
       alignItems: 'center',
 
 
@@ -168,29 +173,32 @@ const useStyles = makeStyles(() => ({
   partCont: {
     marginBottom: "150px",
     display: "flex",
+
   },
   partPaper: {
     backgroundColor: "#444546",
-    padding: theme.spacing(2),
+
     textAlign: "center",
     height: '607px',
-    width:'100%',
+    width: '100%',
     marginTop: '80px',
     borderRadius: '0',
-   
+
     [theme.breakpoints.down("md")]: {
       height: "400px",
-      
+
     },
     [theme.breakpoints.down("sm")]: {
       height: "400px",
       marginTop: '20px',
     },
     [theme.breakpoints.down("xs")]: {
-      height: "60px",
-      marginTop: '100px',
+      height: "40%",
+      marginTop: '90px',
       marginBottom: "10px",
       textAlign: "left",
+
+      alignSelf: 'stretch',
     },
   },
   partTitle: {
@@ -202,28 +210,29 @@ const useStyles = makeStyles(() => ({
     letterSpacing: '0em',
     display: "flex",
     flexDirection: "column",
-    marginTop: 'auto',
-  
     color: '#FF8E26',
     [theme.breakpoints.down("md")]: {
       fontSize: "26px",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px",
-
+      textAlign: "center",
+      alignSelf: 'baseline',
+      padding: '10px',
+      top: '10px',
     },
   },
   partText: {
     position: 'relative',
-    width: '90%',
-    left: '50px',
-    right: '50px',
+    textAlign: 'center',
     fontSize: '18px',
     display: 'flex',
-    alignItems: 'center',
     color: '#C4C4C4',
-    marginTop: '50px',
-    
+    bottom:'80px',
+    //  paddingLeft:'50px',
+    //  paddingRight:'50px',
+    padding: '20px',
+
     [theme.breakpoints.down("md")]: {
       fontSize: "16px",
       lineHeight: "17px",
@@ -231,38 +240,37 @@ const useStyles = makeStyles(() => ({
 
     },
     [theme.breakpoints.down("xs")]: {
-      left: '13px',
-      right: '13px',
+
       width: '80vw',
-      position: 'relative',
+      height: '250%',
       top: '80px',
-      
-     
+
+
 
 
     },
 
 
   },
-  partLine:{
+  partLine: {
     borderBottom: '10px solid #E25201',
     borderRadius: '0',
-    
-    
+
+
   },
-  partLine2:{
+  partLine2: {
     borderBottom: '10px solid #E25201',
     borderRadius: '0',
-  alignSelf:'right',
-left:'350px',
-position:'relative',
-  top: '180px',
-  width:'100%',
-  [theme.breakpoints.down("sm")]: {
-    width:'0',
-  },
-  
-  
+    alignSelf: 'right',
+    left: '350px',
+    position: 'relative',
+    top: '380px',
+    width: '100%',
+    [theme.breakpoints.down("sm")]: {
+      width: '0',
+    },
+
+
   },
 
   chx: {
@@ -270,7 +278,7 @@ position:'relative',
     position: "relative",
     width: "100%",
 
- 
+
   },
 
 
