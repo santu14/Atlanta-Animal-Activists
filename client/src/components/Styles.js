@@ -184,7 +184,6 @@ const useStyles = makeStyles(() => ({
       marginTop: '90px',
       marginBottom: "10px",
       textAlign: "left",
-
       alignSelf: 'stretch',
     },
   },
@@ -217,7 +216,7 @@ const useStyles = makeStyles(() => ({
     color: '#C4C4C4',
     top: '50px',
     padding: '20px',
-    
+
 
     [theme.breakpoints.down("md")]: {
       fontSize: "16px",
@@ -226,7 +225,7 @@ const useStyles = makeStyles(() => ({
 
     },
     [theme.breakpoints.down("xs")]: {
-      height: '250%',
+      
       top: '20px',
     },
 
@@ -245,10 +244,10 @@ const useStyles = makeStyles(() => ({
     position: 'relative',
     top: '50%',
     width: '100%',
-   
+
     [theme.breakpoints.down("sm")]: {
       width: '0',
-       },
+    },
 
   },
 
@@ -258,6 +257,12 @@ const useStyles = makeStyles(() => ({
     width: "100%",
 
 
+  },
+
+  donateBtn: {
+    top: "50px",
+    backgroundColor:"#212223",
+    fontSize:"large"
   },
 
 
