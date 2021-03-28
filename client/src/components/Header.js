@@ -71,10 +71,10 @@ const Nav = () => {
                   </ListItem>
                 </a>
               ))}
-              <Button
+              <Button 
                 color="secondary"
                 type="submit"
-                style={{ marginRight: "10px" }}
+                style={{ marginRight: "10px", backgroundColor:"#38393A" }}
                 variant="outlined"
               >
                 Donate
