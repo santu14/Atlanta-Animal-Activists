@@ -242,7 +242,7 @@ const useStyles = makeStyles(() => ({
     alignSelf: 'right',
     left: '350px',
     position: 'relative',
-    top: '50%',
+    top: '30%',
     width: '100%',
 
     [theme.breakpoints.down("sm")]: {
