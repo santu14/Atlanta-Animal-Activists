@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     verticalAlign: "baseline",
     borderRadius: '0',
   },
-  
+
 
 
   //   ------------- NAV ------------------------------------------
@@ -70,7 +70,7 @@ const useStyles = makeStyles(() => ({
     position: "relative",
     width: "100%",
 
- 
+
   },
   jumboText: {
     position: "absolute",
@@ -101,6 +101,9 @@ const useStyles = makeStyles(() => ({
   aboutCont: {
     marginBottom: "150px",
     display: "flex",
+    [theme.breakpoints.down("xs")]: {
+
+    },
   },
   aboutPaper: {
     backgroundColor: "#444546",
@@ -133,20 +136,88 @@ const useStyles = makeStyles(() => ({
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px",
-      lineHeight: '50px',
+      lineHeight: '17px',
     },
   },
   aboutText: {
     position: 'relative',
-    width: '70%',
-    left: '50px',
-    right: '50px',
+    textAlign: 'center',
+    padding: '20px',
+
+    //   paddingLeft:'70px',
+    //  paddingRight:'70px',
     top: '103px',
     fontSize: '18px',
     display: 'flex',
-    alignItems: 'flex-end',
+
     color: '#C4C4C4',
-    
+
+    [theme.breakpoints.down("md")]: {
+      fontSize: "16px",
+      lineHeight: "17px",
+      top: '75px',
+    },
+    [theme.breakpoints.down("xs")]: {
+      top: '30px',
+      alignItems: 'center',
+    },
+  },
+  // --------------  Participate ------------------------------
+  partCont: {
+    marginBottom: "150px",
+    display: "flex",
+
+  },
+  partPaper: {
+    backgroundColor: "#444546",
+    textAlign: "center",
+    height: '507px',
+    width: '100%',
+    marginTop: '80px',
+    borderRadius: '0',
+
+    [theme.breakpoints.down("sm")]: {
+      marginTop: '20px',
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "40%",
+      marginTop: '90px',
+      marginBottom: "10px",
+      textAlign: "left",
+      alignSelf: 'stretch',
+    },
+  },
+  partTitle: {
+    fontFamily: 'Varela Round',
+    position: "relative",
+    top: '20px',
+    fontSize: '38px',
+    fontWeight: '400',
+    letterSpacing: '0em',
+    display: "flex",
+    flexDirection: "column",
+    color: '#FF8E26',
+    [theme.breakpoints.down("md")]: {
+      fontSize: "26px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
+      textAlign: "center",
+      alignSelf: 'baseline',
+      padding: '10px',
+      top: '10px',
+    },
+  },
+  partText: {
+    position: 'relative',
+    textAlign: 'center',
+    fontSize: '18px',
+    display: 'flex',
+    color: '#C4C4C4',
+    top: '50px',
+    padding: '20px',
+
+
     [theme.breakpoints.down("md")]: {
       fontSize: "16px",
       lineHeight: "17px",
@@ -154,17 +225,45 @@ const useStyles = makeStyles(() => ({
 
     },
     [theme.breakpoints.down("xs")]: {
-      left: '13px',
-      right: '13px',
-      width: '90%',
-      alignItems: 'center',
-
-
+      
+      top: '20px',
     },
+
+  },
+  partLine: {
+    borderBottom: '10px solid #E25201',
+    borderRadius: '0',
+
+
+  },
+  partLine2: {
+    borderBottom: '10px solid #E25201',
+    borderRadius: '0',
+    alignSelf: 'right',
+    left: '350px',
+    position: 'relative',
+    top: '30%',
+    width: '100%',
+
+    [theme.breakpoints.down("sm")]: {
+      width: '0',
+    },
+
+  },
+
+  chx: {
+    // flexShrink: '0',
+    position: "relative",
+    width: "100%",
 
 
   },
 
+  donateBtn: {
+    top: "50px",
+    backgroundColor:"#212223",
+    fontSize:"large"
+  },
 
 
 
