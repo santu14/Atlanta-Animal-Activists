@@ -11,6 +11,8 @@ import ImageUploader from "./components/ImageUploader/index.js";
 import Gallery from "./components/Gallery";
 import AdminButton from "./components/AdminButton";
 import About from './components/About';
+import Events from './components/Events';
+
 import Participate from "./components/Participate";
 
 
@@ -31,6 +33,10 @@ function App() {
 
               <About/>
               <Participate/>
+
+              <Events/>
+         
+              {/* <Gallery/>
               <Gallery/>
           
          

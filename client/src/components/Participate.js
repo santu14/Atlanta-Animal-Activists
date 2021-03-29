@@ -54,9 +54,6 @@ const Participate = () => {
                 </Grid>
                 </Hidden>
                 
-
-
-
             </Grid>
 
         </div>
