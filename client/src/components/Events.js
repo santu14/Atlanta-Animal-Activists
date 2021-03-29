@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Grid, Paper, Hidden } from "@material-ui/core";
 import useStyles from "../components/Styles";
 import Person from './assets/img/person.jpg'
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
 const Events = () => {
     const classes = useStyles();
@@ -23,14 +24,28 @@ const Events = () => {
                     </Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={12} container >
+                <Grid item xs={12} container  >
 
                     <Grid item >
                         <img className={classes.person} src={Person} alt='person pets cow' />
                     </Grid>
                     <Grid item className={classes.eventLine3} />
                 </Grid>
+                <Grid item xs={12} container  >
+                    <div className={classes.twitterContainer}>
 
+
+                        <Paper className={classes.eventPaper2} >
+                            <TwitterTimelineEmbed
+                                sourceType="timeline"
+                                id="539487832448843776"
+                                borderColor="#F44336"
+                                theme="dark"
+                                options={{height: 400}}
+                            />
+                        </Paper>
+                    </div>
+                </Grid>
 
             </Grid>
 
