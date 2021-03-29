@@ -5,7 +5,7 @@ import SignUp from "./SignUp";
 
 import { IsAuthContext } from "./isAuthContext";
 
-const AuthForm = () => {
+const AuthForm = (props) => {
 
   
     // ------------------------------- Auth -------------------------------------------------
@@ -60,7 +60,7 @@ const AuthForm = () => {
   };
   // ----------------------- Form switch -----------------------------
 
-  const [formType, setFormType] = useState("signUp");
+  const [formType, setFormType] = useState("signIn");
   
   // Function for switching between forms
   const switchForm = (e) => {
@@ -93,7 +93,9 @@ const AuthForm = () => {
             if (err.passwordConfirm) {setHelperText({...helperText, passwordConfirm: err.passwordConfirm})}
              
         });
-    } 
+    } else {
+      props.onSub()
+    }
    
   };
  
