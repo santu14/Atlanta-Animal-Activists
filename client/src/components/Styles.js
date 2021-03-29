@@ -330,25 +330,53 @@ const useStyles = makeStyles(() => ({
 
   imgTextDiv: {
     position: "absolute",
-    bottom: "30px",
+    top: "0px",
     backgroundColor: "rgba(0,0,0,0.60)",
     width: "1000px",
-    fontSize: "20px",
-    color: "#E0E0E0",
+    
+    
+    color: "white",
     [theme.breakpoints.down("md")]: {
-      fontSize: "15px",
+      
       width: "700px",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "10px",
+      
       width: "300px",
     },
 
   },
   imgText: {
+    fontSize: "25px",
     paddingLeft: "20px",
-
+    fontWeight: "100",
+    fontFamily: "Open Sans, sans-serif",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "15px",
+     
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "15px",
+      
+    },
+    // paddingTop: "px"
   },
+  // ------------------------ Modal ------------------------------
+  adminModal: {
+    width: "600px",
+    boxShadow: "15px 10px 10px rgba(0,0,0,0.60)",
+    padding: "20px",
+    marginTop: "200px",
+    margin: "auto",
+    [theme.breakpoints.down("md")]: {
+      width: "500px",
+
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "300px",
+
+    },
+  }
 }));
 
 export default useStyles;
