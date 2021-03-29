@@ -36,13 +36,13 @@ function App() {
 
               <Events/>
          
+              
               {/* <Gallery/>
-              <Gallery/>
           
          
-              {/*
+      
             
-              <ImageUploader/> */}
+              <ImageUploader/>  */}
               
             
             {/* auth form container */}

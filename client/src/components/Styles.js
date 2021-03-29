@@ -171,13 +171,18 @@ const useStyles = makeStyles(() => ({
   partPaper: {
     backgroundColor: "#444546",
     textAlign: "center",
-    height: '507px',
+    height: '60%',
     width: '100%',
     marginTop: '80px',
     borderRadius: '0',
 
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       marginTop: '20px',
+      height: '80%',
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: '-20px',
+      height: '105%',
     },
     [theme.breakpoints.down("xs")]: {
       height: "40%",
@@ -225,7 +230,7 @@ const useStyles = makeStyles(() => ({
 
     },
     [theme.breakpoints.down("xs")]: {
-      
+
       top: '20px',
     },
 
@@ -261,28 +266,38 @@ const useStyles = makeStyles(() => ({
 
   donateBtn: {
     top: "50px",
-    backgroundColor:"#212223",
-    fontSize:"large"
+    backgroundColor: "#212223",
+    fontSize: "large"
   },
 
   // --------------  Events ------------------------------
   eventCont: {
     marginBottom: "150px",
     display: "flex",
-    paddingLeft: "60px",
-
+    paddingLeft: "5%",
+    position: 'relative',
+    
+    [theme.breakpoints.down("xs")]: {
+    paddingLeft: "1%",
+      
+    },
   },
   eventPaper: {
     backgroundColor: "#444546",
     textAlign: "center",
-    height: '407px',
+    height: '140%',
     width: '100%',
-
+    position: 'relative',
+    top: "10px",
+    alignSelf: "right",
     borderRadius: '0',
-    
-
+    zIndex: "2",
+    [theme.breakpoints.down("xs")]: {
+    height: '105%',
+    top: "-10px",
+      },
   },
- eventTitle: {
+  eventTitle: {
     fontFamily: 'Varela Round',
     position: "relative",
     top: '30px',
@@ -290,6 +305,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: '400',
     letterSpacing: '0em',
     display: "flex",
+    padding:"10px",
     flexDirection: "column",
     color: '#FF8E26',
     [theme.breakpoints.down("md")]: {
@@ -298,7 +314,7 @@ const useStyles = makeStyles(() => ({
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px",
       textAlign: "center",
-      alignSelf: 'baseline',
+      
       padding: '10px',
       top: '10px',
     },
@@ -310,7 +326,7 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     color: '#C4C4C4',
     top: '50px',
-    padding: '20px',
+    padding: '30px',
 
 
     [theme.breakpoints.down("md")]: {
@@ -320,8 +336,7 @@ const useStyles = makeStyles(() => ({
 
     },
     [theme.breakpoints.down("xs")]: {
-      
-      top: '20px',
+      top: '40px',
     },
 
   },
@@ -329,16 +344,25 @@ const useStyles = makeStyles(() => ({
     borderBottom: '16px solid #E25201',
     borderRadius: '0',
     width: "10px",
-    
-   
+
+
 
   },
   eventLine2: {
+    borderBottom: '16px solid #E25201',
+    borderRadius: '0',
+    left: "40%",
+    top: "10%",
+    width:"60%",
+    position: 'relative',
+
+  },
+  eventLine3: {
     borderLeft: '16px solid #E25201',
     borderRadius: '0',
-    height:"100px",
-    marginTop:"-10px",
-  
+    height: "100px",
+    marginTop: "-10px",
+
 
 
   },
@@ -351,15 +375,20 @@ const useStyles = makeStyles(() => ({
     position: "relative",
     width: "100%",
     borderLeft: '16px solid #E25201',
-    borderTop:'16px inherit solid',
+    borderTop: '16px inherit solid',
     borderRadius: '0',
-    height:"849px",
     
-    alignSelf:"baseline",
+    [theme.breakpoints.down("md")]: {
+      width: "97%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "95%",
+    },
+
 
   },
 
- 
+
 
 
   // --------------  IMG Uploader ------------------------------
@@ -371,7 +400,7 @@ const useStyles = makeStyles(() => ({
   imgCard: {
     margin: "auto",
     height: "200px",
-    width: "300px",
+   
 
     overflow: "hidden",
     [theme.breakpoints.down("md")]: {
@@ -428,15 +457,15 @@ const useStyles = makeStyles(() => ({
     top: "0px",
     backgroundColor: "rgba(0,0,0,0.60)",
     width: "1000px",
-    
-    
+
+
     color: "white",
     [theme.breakpoints.down("md")]: {
-      
+
       width: "700px",
     },
     [theme.breakpoints.down("xs")]: {
-      
+
       width: "300px",
     },
 
@@ -448,11 +477,11 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Open Sans, sans-serif",
     [theme.breakpoints.down("md")]: {
       fontSize: "15px",
-     
+
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "15px",
-      
+
     },
     // paddingTop: "px"
   },
