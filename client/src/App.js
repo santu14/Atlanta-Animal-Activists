@@ -8,6 +8,8 @@ import AuthForm from "./AuthForm";
 import AuthState from "./AuthForm/isAuthContext";
 import Jumbotron from './components/Jumbotron';
 import About from './components/About';
+import Events from './components/Events';
+
 import Participate from "./components/Participate";
 // import ImageUploader from "./components/ImageUploader/index.js";
 // import Gallery from "./components/Gallery";
@@ -30,6 +32,8 @@ function App() {
               <About/>
 
               <Participate/>
+
+              <Events/>
          
               {/* <Gallery/>
           

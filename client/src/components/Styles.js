@@ -112,7 +112,7 @@ const useStyles = makeStyles(() => ({
     height: "129px",
     left: "314px",
     top: "624px",
-    borderBottom: '10px solid #E25201',
+    borderBottom: '16px solid #E25201',
     borderRadius: '0',
     [theme.breakpoints.down("xs")]: {
 
@@ -190,7 +190,7 @@ const useStyles = makeStyles(() => ({
   partTitle: {
     fontFamily: 'Varela Round',
     position: "relative",
-    top: '20px',
+    top: '30px',
     fontSize: '38px',
     fontWeight: '400',
     letterSpacing: '0em',
@@ -231,13 +231,13 @@ const useStyles = makeStyles(() => ({
 
   },
   partLine: {
-    borderBottom: '10px solid #E25201',
+    borderBottom: '16px solid #E25201',
     borderRadius: '0',
 
 
   },
   partLine2: {
-    borderBottom: '10px solid #E25201',
+    borderBottom: '16px solid #E25201',
     borderRadius: '0',
     alignSelf: 'right',
     left: '350px',
@@ -265,6 +265,101 @@ const useStyles = makeStyles(() => ({
     fontSize:"large"
   },
 
+  // --------------  Events ------------------------------
+  eventCont: {
+    marginBottom: "150px",
+    display: "flex",
+    paddingLeft: "60px",
+
+  },
+  eventPaper: {
+    backgroundColor: "#444546",
+    textAlign: "center",
+    height: '407px',
+    width: '100%',
+
+    borderRadius: '0',
+    
+
+  },
+ eventTitle: {
+    fontFamily: 'Varela Round',
+    position: "relative",
+    top: '30px',
+    fontSize: '38px',
+    fontWeight: '400',
+    letterSpacing: '0em',
+    display: "flex",
+    flexDirection: "column",
+    color: '#FF8E26',
+    [theme.breakpoints.down("md")]: {
+      fontSize: "26px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
+      textAlign: "center",
+      alignSelf: 'baseline',
+      padding: '10px',
+      top: '10px',
+    },
+  },
+  eventText: {
+    position: 'relative',
+    textAlign: 'center',
+    fontSize: '18px',
+    display: 'flex',
+    color: '#C4C4C4',
+    top: '50px',
+    padding: '20px',
+
+
+    [theme.breakpoints.down("md")]: {
+      fontSize: "16px",
+      lineHeight: "17px",
+      top: '33px',
+
+    },
+    [theme.breakpoints.down("xs")]: {
+      
+      top: '20px',
+    },
+
+  },
+  eventLine: {
+    borderBottom: '16px solid #E25201',
+    borderRadius: '0',
+    width: "10px",
+    
+   
+
+  },
+  eventLine2: {
+    borderLeft: '16px solid #E25201',
+    borderRadius: '0',
+    height:"100px",
+    marginTop:"-10px",
+  
+
+
+  },
+
+
+
+
+  person: {
+    // flexShrink: '0',
+    position: "relative",
+    width: "100%",
+    borderLeft: '16px solid #E25201',
+    borderTop:'16px inherit solid',
+    borderRadius: '0',
+    height:"849px",
+    
+    alignSelf:"baseline",
+
+  },
+
+ 
 
 
   // --------------  IMG Uploader ------------------------------
