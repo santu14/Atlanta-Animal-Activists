@@ -30,6 +30,7 @@ function App() {
               <Jumbotron/>
 
               <About/>
+              <Participate/>
               <Gallery/>
           
          
