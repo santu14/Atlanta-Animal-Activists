@@ -274,7 +274,7 @@ const useStyles = makeStyles(() => ({
   eventCont: {
     marginBottom: "150px",
     display: "flex",
-    paddingLeft: "5%",
+    paddingLeft: "60px",
     position: 'relative',
     
     [theme.breakpoints.down("xs")]: {
@@ -373,10 +373,12 @@ const useStyles = makeStyles(() => ({
   person: {
     // flexShrink: '0',
     position: "relative",
-    width: "100%",
+    width: "98.9%",
+    height:"100%",
     borderLeft: '16px solid #E25201',
     borderTop: '16px inherit solid',
     borderRadius: '0',
+    
     
     [theme.breakpoints.down("md")]: {
       width: "97%",
@@ -387,7 +389,32 @@ const useStyles = makeStyles(() => ({
 
 
   },
+  twitterContainer:{
+paddingLeft:"100px",
+[theme.breakpoints.down("xs")]: {
+  paddingLeft:"auto",
+  alignItems:"center",
+  textAlign: "center",
 
+},
+  },
+  eventPaper2: {
+    backgroundColor: " #212223",
+    textAlign: "center",
+    
+    width: '500px',
+    position: 'relative',
+    padding:"35px",
+    top: "-500px",
+    borderRadius: '0',
+    alignSelf: "right",
+    [theme.breakpoints.down("xs")]: {
+    width: '300px',
+   
+    top: "-10px",
+
+      },
+  },
 
 
 
