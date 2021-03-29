@@ -238,11 +238,11 @@ const useStyles = makeStyles(() => ({
     
     color: "white",
     [theme.breakpoints.down("md")]: {
-      fontSize: "15px",
+      
       width: "700px",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "10px",
+      
       width: "300px",
     },
 
@@ -252,6 +252,14 @@ const useStyles = makeStyles(() => ({
     paddingLeft: "20px",
     fontWeight: "100",
     fontFamily: "Open Sans, sans-serif",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "15px",
+     
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "15px",
+      
+    },
     // paddingTop: "px"
   },
   // ------------------------ Modal ------------------------------
