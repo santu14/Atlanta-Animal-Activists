@@ -272,7 +272,7 @@ const useStyles = makeStyles(() => ({
 
   // --------------  Events ------------------------------
   eventCont: {
-    marginBottom: "150px",
+    // marginBottom: "150px",
     display: "flex",
     paddingLeft: "60px",
     position: 'relative',
