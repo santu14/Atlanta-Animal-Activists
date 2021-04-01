@@ -13,7 +13,7 @@ exports.getAboutText = (req, res) => {
 
 exports.uploadAboutText = (req, res) => {
   let { text, location } = req.body;
-  // first check if image has already been uploaded
+  // first check if About has already been uploaded
         About.findOne({ location: location }).then((About) => {
           if (About) {
             // if location is being used update the item in that location
