@@ -4,15 +4,18 @@ import useStyles from "../Styles";
 const ImgHolder = (props) => {
   const classes = useStyles();
   return (
-    
+    <>
       <Paper variant="outlined" className={classes.galleryImgCard} square>
-        <img src={props.imgurl} className={classes.galleryImgDisplay} alt="img" />
-        <div className={classes.imgTextDiv}>
-
-          <h3 className={classes.imgText}>{props.imgname}</h3>
-        </div>
+        <img
+          src={props.imgurl}
+          className={classes.galleryImgDisplay}
+          alt="img"
+        />
+      <div className={classes.imgTextDiv}>
+        <h3 className={classes.imgText}>{props.imgname}</h3>
+      </div>
       </Paper>
-    
+    </>
   );
 };
 

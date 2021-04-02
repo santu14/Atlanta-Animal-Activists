@@ -23,6 +23,7 @@ export default {
     return axios.get("/api/checkauth");
   },
 
+  // --------------- Gallery Uploader API ---------------------
   getOneImg: (data) => {
     return axios.post("/api/findOneImg", data).then( data => {
       console.log(data);
@@ -47,6 +48,19 @@ export default {
       console.log(data);
       return data
     });
-  }
+  },
+    // --------------- About Text Uploader API ---------------------
 
+    getAboutTexts: (data) => {
+      return axios.get("/api/getAboutText").then( data => {
+        console.log(data);
+        return data
+      })
+    },
+    uploadAboutText: (data)=> {
+      return axios.post("/api/uploadAboutText", data).then((data) => {
+        console.log(data);
+        return data
+      });
+    },
 };
