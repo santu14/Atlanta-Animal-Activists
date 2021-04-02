@@ -123,7 +123,7 @@ const useStyles = makeStyles(() => ({
   aboutTitle: {
     fontFamily: 'Varela Round',
     position: "relative",
-    fontSize: '38px',
+    fontSize: '40px',
     fontWeight: '400',
     lineHeight: '230px',
     letterSpacing: '0em',
@@ -143,10 +143,7 @@ const useStyles = makeStyles(() => ({
     position: 'relative',
     textAlign: 'center',
     padding: '20px',
-
-    //   paddingLeft:'70px',
-    //  paddingRight:'70px',
-    top: '103px',
+    top: '73px',
     fontSize: '18px',
     display: 'flex',
 
@@ -164,14 +161,16 @@ const useStyles = makeStyles(() => ({
   },
   // --------------  Participate ------------------------------
   partCont: {
-    marginBottom: "150px",
+    marginBottom: "10px",
     display: "flex",
-
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "180px",
+    },
   },
   partPaper: {
     backgroundColor: "#444546",
     textAlign: "center",
-    height: '60%',
+    height: '80%',
     width: '100%',
     marginTop: '80px',
     borderRadius: '0',
@@ -181,8 +180,8 @@ const useStyles = makeStyles(() => ({
       height: '80%',
     },
     [theme.breakpoints.down("sm")]: {
-      marginTop: '-20px',
-      height: '105%',
+      marginTop: '-16px',
+      height: '103%',
     },
     [theme.breakpoints.down("xs")]: {
       height: "40%",
@@ -196,7 +195,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: 'Varela Round',
     position: "relative",
     top: '30px',
-    fontSize: '38px',
+    fontSize: '40px',
     fontWeight: '400',
     letterSpacing: '0em',
     display: "flex",
@@ -265,9 +264,9 @@ const useStyles = makeStyles(() => ({
   },
 
   donateBtn: {
-    top: "50px",
+    top: "15%",
     backgroundColor: "#212223",
-    fontSize: "large"
+    fontSize: "25px"
   },
 
   // --------------  Events ------------------------------
@@ -276,10 +275,15 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     paddingLeft: "60px",
     position: 'relative',
+    top: "-150px",
+
     
+
     [theme.breakpoints.down("xs")]: {
-    paddingLeft: "1%",
-      
+      paddingLeft: "1%",
+    top: "-55px",
+
+
     },
   },
   eventPaper: {
@@ -288,24 +292,32 @@ const useStyles = makeStyles(() => ({
     height: '140%',
     width: '100%',
     position: 'relative',
-    top: "10px",
+    top: "200px",
     alignSelf: "right",
     borderRadius: '0',
     zIndex: "2",
+    padding:"10px",
+    [theme.breakpoints.down("md")]: {
+      height: '115%',
+
+      top: "30px",
+    },
+
     [theme.breakpoints.down("xs")]: {
-    height: '105%',
-    top: "-10px",
-      },
+      height: '105%',
+      
+      top: "-10px",
+    },
   },
   eventTitle: {
     fontFamily: 'Varela Round',
     position: "relative",
     top: '30px',
-    fontSize: '38px',
+    fontSize: '40px',
     fontWeight: '400',
     letterSpacing: '0em',
     display: "flex",
-    padding:"10px",
+    padding: "10px",
     flexDirection: "column",
     color: '#FF8E26',
     [theme.breakpoints.down("md")]: {
@@ -314,7 +326,7 @@ const useStyles = makeStyles(() => ({
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px",
       textAlign: "center",
-      
+
       padding: '10px',
       top: '10px',
     },
@@ -353,7 +365,7 @@ const useStyles = makeStyles(() => ({
     borderRadius: '0',
     left: "40%",
     top: "10%",
-    width:"60%",
+    width: "60%",
     position: 'relative',
 
   },
@@ -368,18 +380,18 @@ const useStyles = makeStyles(() => ({
   },
 
 
-
+ 
 
   person: {
     // flexShrink: '0',
     position: "relative",
     width: "98.9%",
-    height:"100%",
+    height: "100%",
     borderLeft: '16px solid #E25201',
     borderTop: '16px inherit solid',
     borderRadius: '0',
-    
-    
+
+
     [theme.breakpoints.down("md")]: {
       width: "97%",
     },
@@ -389,31 +401,36 @@ const useStyles = makeStyles(() => ({
 
 
   },
-  twitterContainer:{
-paddingLeft:"100px",
-[theme.breakpoints.down("xs")]: {
-  paddingLeft:"auto",
-  alignItems:"center",
-  textAlign: "center",
 
-},
+  twitterContainer: {
+    paddingLeft: "100px",
+    [theme.breakpoints.down("xs")]: {
+      paddingLeft: "0",
+      alignItems: "center",
+      textAlign: "center",
+
+    },
   },
   eventPaper2: {
     backgroundColor: " #212223",
     textAlign: "center",
-    
-    width: '500px',
     position: 'relative',
-    padding:"35px",
-    top: "-500px",
+    padding: "45px",
+    top: "-450px",
     borderRadius: '0',
     alignSelf: "right",
     [theme.breakpoints.down("xs")]: {
-    width: '300px',
-   
-    top: "-10px",
 
-      },
+
+      top: "-10px",
+
+    },
+    [theme.breakpoints.down("sm")]: {
+
+
+      top: "-100px",
+
+    },
   },
 
 
@@ -427,7 +444,7 @@ paddingLeft:"100px",
   imgCard: {
     margin: "auto",
     height: "200px",
-   
+
 
     overflow: "hidden",
     [theme.breakpoints.down("md")]: {

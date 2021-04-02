@@ -16,7 +16,7 @@ const About = () => {
                         </Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={12} sm={7} md={6} >
+                <Grid item xs={12} sm={7} md={6} container >
                     <Typography className={classes.aboutText}>
                         Atlanta Animal Activists is a group of people dedicated to doing monthly street activism events and help the public see and understand the plight of non-human animals and the role we all play in it. We shed light on the atrocities animals goes through every single day to be used for food, clothing, entertainment, experiments, etc. and encourage the public to transition to a vegan lifestyle so that animals are no longer abused and exploited in their name.
                     </Typography>

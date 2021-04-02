@@ -10,10 +10,10 @@ const Events = () => {
         <div>
             <Grid item xs={12} container className={classes.eventCont} >
 
-                <Grid item xs={2} md={4} className={classes.eventLine} />
-                <Grid item xs={0} md={4} />
+                <Grid item xs={2} md={4} lg={4} className={classes.eventLine} />
+                <Grid item xs={0} md={2} lg={4} />
 
-                <Grid item xs={10} md={4} container>
+                <Grid item xs={10} md={6} lg={4} container>
                     <Paper className={classes.eventPaper} >
                         <Typography className={classes.eventTitle}>
                             Events and Updates
