@@ -37,11 +37,12 @@ const Events = () => {
 
                         <Paper className={classes.eventPaper2} >
                             <TwitterTimelineEmbed
-                                sourceType="timeline"
-                                id="539487832448843776"
+                                sourceType="profile"
+                                screenName="peta"
                                 borderColor="#F44336"
                                 theme="dark"
-                                options={{height: 400}}
+                                options={{height: 500}}
+                              
                             />
                         </Paper>
                     </div>

@@ -37,7 +37,16 @@ function App() {
               {/* <Events/> */}
               <Gallery/>
               
+<<<<<<< HEAD
+           <Gallery/>
+          
+         
+      
+            
+              {/* <ImageUploader/>  */}
+=======
               {/*<ImageUploader/>  */}
+>>>>>>> f8c6be120e90ee625658afdca60201a1d1f81114
               
             
             {/* auth form container */}

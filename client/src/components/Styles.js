@@ -271,18 +271,23 @@ const useStyles = makeStyles(() => ({
 
   // --------------  Events ------------------------------
   eventCont: {
-    // marginBottom: "150px",
+    marginBottom: "-30%",
     display: "flex",
     paddingLeft: "60px",
     position: 'relative',
     top: "-150px",
 
-    
+    [theme.breakpoints.down("md")]: {
+      paddingLeft: "1%",
+      top: "-55px",
+      marginBottom: "-15%"
+
+    },
 
     [theme.breakpoints.down("xs")]: {
       paddingLeft: "1%",
-    top: "-55px",
-
+      top: "-55px",
+      marginBottom: "-10%"
 
     },
   },
@@ -296,7 +301,7 @@ const useStyles = makeStyles(() => ({
     alignSelf: "right",
     borderRadius: '0',
     zIndex: "2",
-    padding:"10px",
+    padding: "10px",
     [theme.breakpoints.down("md")]: {
       height: '115%',
 
@@ -305,7 +310,7 @@ const useStyles = makeStyles(() => ({
 
     [theme.breakpoints.down("xs")]: {
       height: '105%',
-      
+
       top: "-10px",
     },
   },
@@ -380,7 +385,7 @@ const useStyles = makeStyles(() => ({
   },
 
 
- 
+
 
   person: {
     // flexShrink: '0',
@@ -404,11 +409,11 @@ const useStyles = makeStyles(() => ({
 
   twitterContainer: {
     paddingLeft: "100px",
+
+    position: 'relative',
     [theme.breakpoints.down("xs")]: {
       paddingLeft: "0",
-      alignItems: "center",
-      textAlign: "center",
-
+      width: "100%",
     },
   },
   eventPaper2: {
@@ -416,21 +421,32 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
     position: 'relative',
     padding: "45px",
-    top: "-450px",
+    top: "-550px",
     borderRadius: '0',
     alignSelf: "right",
     [theme.breakpoints.down("xs")]: {
 
-
+      backgroundColor: " #38393A",
       top: "-10px",
 
     },
     [theme.breakpoints.down("sm")]: {
 
-
+      alignSelf: "center",
       top: "-100px",
 
     },
+    [theme.breakpoints.up("md")]: {
+      top: "-400px",
+
+    },
+    [theme.breakpoints.up("lg")]: {
+
+      width: "120%",
+      top: "-600px",
+
+    },
+
   },
 
 
