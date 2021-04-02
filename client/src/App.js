@@ -34,15 +34,10 @@ function App() {
               <About/>
               <Participate/>
 
-              <Events/>
-         
+              {/* <Events/> */}
+              <Gallery/>
               
-              {/* <Gallery/>
-          
-         
-      
-            
-              <ImageUploader/>  */}
+              {/*<ImageUploader/>  */}
               
             
             {/* auth form container */}

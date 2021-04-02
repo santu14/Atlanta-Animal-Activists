@@ -271,7 +271,7 @@ const useStyles = makeStyles(() => ({
 
   // --------------  Events ------------------------------
   eventCont: {
-    marginBottom: "150px",
+    // marginBottom: "150px",
     display: "flex",
     paddingLeft: "60px",
     position: 'relative',
@@ -497,8 +497,10 @@ const useStyles = makeStyles(() => ({
   },
 
   imgTextDiv: {
-    position: "absolute",
-    top: "0px",
+    position: "relative",
+    // bottom: "0px",
+    alignSelf: "center",
+    textAlign: "center",
     backgroundColor: "rgba(0,0,0,0.60)",
     width: "1000px",
 
