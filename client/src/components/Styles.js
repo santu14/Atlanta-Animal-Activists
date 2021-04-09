@@ -491,9 +491,21 @@ const useStyles = makeStyles(() => ({
   },
   // --------------- Gallery ------------------------------
   galleryCont: {
-    marginTop: "-12%",
+    top: "-50px",
     display: "flex",
     position: 'relative',
+    [theme.breakpoints.up("xl")]: {
+      marginTop: "",
+    },
+    [theme.breakpoints.up("lg")]: {
+      top: "-50px",
+    },
+    [theme.breakpoints.down("md")]: {
+      top: "0px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      top: "0px",
+    },
 
   },
   galleryCont2:{
@@ -503,6 +515,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#444546",
     padding: theme.spacing(2),
     textAlign: "center",
+    borderRadius: '0',
   
  
 
@@ -524,6 +537,10 @@ const useStyles = makeStyles(() => ({
     borderRadius: '0',
     borderLeft: '16px solid #E25201',
     height:"100%",
+    [theme.breakpoints.down("xs")]: {
+
+    
+    },
     
   },
   galleryTitle: {
@@ -555,26 +572,21 @@ const useStyles = makeStyles(() => ({
     alignSelf: "center",
     top: "624px",
     padding: "50px",
+    borderRadius: '0',
+  
     
-    [theme.breakpoints.down("md")]: {
-      height: "450px",
-      width: "700px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      height: "200px",
-      width: "300px",
-    },
-
+  
 
   },
 
 
   galleryImgDisplay: {
-    marginTop: "auto",
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    padding:"5%",
+    width: "90%",
+    height: "90%",
+    justifySelf: "center",
+    alignSelf: "center",
+    position: "relative",
   },
 
   imgTextDiv: {
