@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import theme from "./Theme";
+
 const useStyles = makeStyles(() => ({
   typographyStyles: {
     flex: 1,
@@ -489,11 +490,72 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
   },
   // --------------- Gallery ------------------------------
-  galleryImgCard: {
-    margin: "auto",
-    height: "650px",
-    width: "1000px",
-    overflow: "hidden",
+  galleryCont: {
+    marginTop: "-12%",
+    display: "flex",
+    position: 'relative',
+
+  },
+  galleryCont2:{
+
+  },
+  galleryPaper: {
+    backgroundColor: "#444546",
+    padding: theme.spacing(2),
+    textAlign: "center",
+  
+ 
+
+    [theme.breakpoints.down("xs")]: {
+
+      height: "20px",
+      marginBottom: "10px",
+    },
+  },
+  galleryLine: {
+    borderTop: '16px solid #E25201',
+    borderRadius: '0',
+    
+
+
+  },
+  galleryLine2:{
+
+    borderRadius: '0',
+    borderLeft: '16px solid #E25201',
+    height:"100%",
+    
+  },
+  galleryTitle: {
+    fontFamily: 'Varela Round',
+    position: "relative",
+
+    fontSize: '40px',
+    fontWeight: '400',
+    letterSpacing: '0em',
+    display: "flex",
+    padding: "10px",
+    flexDirection: "column",
+    color: '#FF8E26',
+    [theme.breakpoints.down("md")]: {
+      fontSize: "26px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
+      textAlign: "center",
+
+      padding: '10px',
+      top: '10px',
+    },
+  },
+
+  galleryPaper2: {
+    backgroundColor: "#212223",
+    display: "relative",
+    alignSelf: "center",
+    top: "624px",
+    padding: "50px",
+    
     [theme.breakpoints.down("md")]: {
       height: "450px",
       width: "700px",
@@ -502,7 +564,10 @@ const useStyles = makeStyles(() => ({
       height: "200px",
       width: "300px",
     },
+
+
   },
+
 
   galleryImgDisplay: {
     marginTop: "auto",
@@ -517,26 +582,18 @@ const useStyles = makeStyles(() => ({
     // bottom: "0px",
     alignSelf: "center",
     textAlign: "center",
-    backgroundColor: "rgba(0,0,0,0.60)",
-    width: "1000px",
-
-
     color: "white",
-    [theme.breakpoints.down("md")]: {
-
-      width: "700px",
-    },
-    [theme.breakpoints.down("xs")]: {
-
-      width: "300px",
-    },
 
   },
   imgText: {
-    fontSize: "25px",
+
     paddingLeft: "20px",
-    fontWeight: "100",
-    fontFamily: "Open Sans, sans-serif",
+    position: 'relative',
+    textAlign: 'center',
+    fontSize: '20px',
+    color: '#C4C4C4',
+
+
     [theme.breakpoints.down("md")]: {
       fontSize: "15px",
 

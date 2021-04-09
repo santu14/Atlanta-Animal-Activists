@@ -1,8 +1,8 @@
 import React from 'react';
-import { Typography, Grid, Paper, Hidden } from "@material-ui/core";
+import { Typography, Grid, Paper} from "@material-ui/core";
 import useStyles from "../components/Styles";
 import Person from './assets/img/person.jpg'
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const Events = () => {
     const classes = useStyles();
