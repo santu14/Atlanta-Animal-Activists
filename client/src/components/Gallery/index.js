@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-material-ui-carousel";
 import ImgHolder from "./ImgHolder";
 import API from "../../utils/API";
-import { Container } from "@material-ui/core";
+
+import { Typography, Grid, Paper, Hidden, } from "@material-ui/core";
+import useStyles from "../../components/Styles";
 const Gallery = () => {
+  const classes = useStyles();
   let initialCurrentImgState = [
     { url: "", name: "" },
     { url: "", name: "" },
@@ -24,13 +27,47 @@ const Gallery = () => {
     });
   }, []);
   return (
-    <Container>
-      <Carousel>
-        {currentImgs.map((img, i) => (
-          <ImgHolder key={i} imgurl={img.url} imgname={img.name} />
-        ))}
-      </Carousel>
-    </Container>
+    <div>
+      <Grid item xs={12} container className={classes.galleryCont} >
+      <Grid item xs={5} />
+        <Grid item xs={6}  className={classes.galleryLine} />
+        <Grid item xs={1} >
+          <div className={classes.galleryLine2}></div> 
+        </Grid> 
+        <Grid item xs={12} container className={classes.galleryCont2} >
+      <Grid item xs={4} />
+      <Grid item xs={4}>
+      <Paper className={classes.galleryPaper} >
+                        <Typography className={classes.galleryTitle}>
+                            Gallery
+                        </Typography>
+                        </Paper>
+      </Grid>
+      <Grid item xs={3} />
+      <Grid item xs={1} >
+      <div className={classes.galleryLine2}></div> 
+      </Grid>
+      <Grid item xs={1}  />
+      <Grid item xs={10} container >
+        <Paper className={classes.galleryPaper2}>
+        
+          <Carousel >
+            {currentImgs.map((img, i) => (
+              <ImgHolder key={i} imgurl={img.url} imgname={img.name} />
+            ))}
+          </Carousel>
+          </Paper>
+        
+        </Grid>
+        
+        
+        <Grid item xs={1}   >
+        <div className={classes.galleryLine2}></div> 
+        </Grid>
+        </Grid> 
+       
+      </Grid>
+    </div>
   );
 };
 
