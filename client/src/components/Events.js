@@ -1,8 +1,8 @@
 import React from 'react';
-import { Typography, Grid, Paper, Hidden } from "@material-ui/core";
+import { Typography, Grid, Paper} from "@material-ui/core";
 import useStyles from "../components/Styles";
 import Person from './assets/img/person.jpg'
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const Events = () => {
     const classes = useStyles();
@@ -37,11 +37,12 @@ const Events = () => {
 
                         <Paper className={classes.eventPaper2} >
                             <TwitterTimelineEmbed
-                                sourceType="timeline"
-                                id="539487832448843776"
+                                sourceType="profile"
+                                screenName="peta"
                                 borderColor="#F44336"
                                 theme="dark"
-                                options={{height: 400}}
+                                options={{height: 500}}
+                              
                             />
                         </Paper>
                     </div>

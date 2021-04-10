@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import theme from "./Theme";
+
 const useStyles = makeStyles(() => ({
   typographyStyles: {
     flex: 1,
@@ -271,18 +272,23 @@ const useStyles = makeStyles(() => ({
 
   // --------------  Events ------------------------------
   eventCont: {
-    // marginBottom: "150px",
+    marginBottom: "-30%",
     display: "flex",
     paddingLeft: "60px",
     position: 'relative',
     top: "-150px",
 
-    
+    [theme.breakpoints.down("md")]: {
+      paddingLeft: "1%",
+      top: "-55px",
+      marginBottom: "-15%"
+
+    },
 
     [theme.breakpoints.down("xs")]: {
       paddingLeft: "1%",
-    top: "-55px",
-
+      top: "-55px",
+      marginBottom: "-10%"
 
     },
   },
@@ -296,7 +302,7 @@ const useStyles = makeStyles(() => ({
     alignSelf: "right",
     borderRadius: '0',
     zIndex: "2",
-    padding:"10px",
+    padding: "10px",
     [theme.breakpoints.down("md")]: {
       height: '115%',
 
@@ -305,7 +311,7 @@ const useStyles = makeStyles(() => ({
 
     [theme.breakpoints.down("xs")]: {
       height: '105%',
-      
+
       top: "-10px",
     },
   },
@@ -380,7 +386,7 @@ const useStyles = makeStyles(() => ({
   },
 
 
- 
+
 
   person: {
     // flexShrink: '0',
@@ -404,11 +410,11 @@ const useStyles = makeStyles(() => ({
 
   twitterContainer: {
     paddingLeft: "100px",
+
+    position: 'relative',
     [theme.breakpoints.down("xs")]: {
       paddingLeft: "0",
-      alignItems: "center",
-      textAlign: "center",
-
+      width: "100%",
     },
   },
   eventPaper2: {
@@ -416,21 +422,32 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
     position: 'relative',
     padding: "45px",
-    top: "-450px",
+    top: "-550px",
     borderRadius: '0',
     alignSelf: "right",
     [theme.breakpoints.down("xs")]: {
 
-
+      backgroundColor: " #38393A",
       top: "-10px",
 
     },
     [theme.breakpoints.down("sm")]: {
 
-
+      alignSelf: "center",
       top: "-100px",
 
     },
+    [theme.breakpoints.up("md")]: {
+      top: "-400px",
+
+    },
+    [theme.breakpoints.up("lg")]: {
+
+      width: "120%",
+      top: "-600px",
+
+    },
+
   },
 
 
@@ -473,27 +490,103 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
   },
   // --------------- Gallery ------------------------------
-  galleryImgCard: {
-    margin: "auto",
-    height: "650px",
-    width: "1000px",
-    overflow: "hidden",
+  galleryCont: {
+    top: "-50px",
+    display: "flex",
+    position: 'relative',
+    [theme.breakpoints.up("xl")]: {
+      marginTop: "",
+    },
+    [theme.breakpoints.up("lg")]: {
+      top: "-50px",
+    },
     [theme.breakpoints.down("md")]: {
-      height: "450px",
-      width: "700px",
+      top: "0px",
     },
     [theme.breakpoints.down("xs")]: {
-      height: "200px",
-      width: "300px",
+      top: "0px",
+    },
+
+  },
+  galleryCont2:{
+
+  },
+  galleryPaper: {
+    backgroundColor: "#444546",
+    padding: theme.spacing(2),
+    textAlign: "center",
+    borderRadius: '0',
+  
+ 
+
+    [theme.breakpoints.down("xs")]: {
+
+      height: "20px",
+      marginBottom: "10px",
+    },
+  },
+  galleryLine: {
+    borderTop: '16px solid #E25201',
+    borderRadius: '0',
+    
+
+
+  },
+  galleryLine2:{
+
+    borderRadius: '0',
+    borderLeft: '16px solid #E25201',
+    height:"100%",
+    [theme.breakpoints.down("xs")]: {
+
+    
+    },
+    
+  },
+  galleryTitle: {
+    fontFamily: 'Varela Round',
+    position: "relative",
+
+    fontSize: '40px',
+    fontWeight: '400',
+    letterSpacing: '0em',
+    display: "flex",
+    padding: "10px",
+    flexDirection: "column",
+    color: '#FF8E26',
+    [theme.breakpoints.down("md")]: {
+      fontSize: "26px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
+      textAlign: "center",
+
+      padding: '10px',
+      top: '10px',
     },
   },
 
+  galleryPaper2: {
+    backgroundColor: "#212223",
+    display: "relative",
+    alignSelf: "center",
+    top: "624px",
+    padding: "50px",
+    borderRadius: '0',
+  
+    
+  
+
+  },
+
+
   galleryImgDisplay: {
-    marginTop: "auto",
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    padding:"5%",
+    width: "90%",
+    height: "90%",
+    justifySelf: "center",
+    alignSelf: "center",
+    position: "relative",
   },
 
   imgTextDiv: {
@@ -501,26 +594,18 @@ const useStyles = makeStyles(() => ({
     // bottom: "0px",
     alignSelf: "center",
     textAlign: "center",
-    backgroundColor: "rgba(0,0,0,0.60)",
-    width: "1000px",
-
-
     color: "white",
-    [theme.breakpoints.down("md")]: {
-
-      width: "700px",
-    },
-    [theme.breakpoints.down("xs")]: {
-
-      width: "300px",
-    },
 
   },
   imgText: {
-    fontSize: "25px",
+
     paddingLeft: "20px",
-    fontWeight: "100",
-    fontFamily: "Open Sans, sans-serif",
+    position: 'relative',
+    textAlign: 'center',
+    fontSize: '20px',
+    color: '#C4C4C4',
+
+
     [theme.breakpoints.down("md")]: {
       fontSize: "15px",
 

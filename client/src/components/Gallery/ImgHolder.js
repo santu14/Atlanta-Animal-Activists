@@ -5,7 +5,7 @@ const ImgHolder = (props) => {
   const classes = useStyles();
   return (
     <>
-      <Paper variant="outlined" className={classes.galleryImgCard} square>
+      <Paper variant="outlined"  square>
         <img
           src={props.imgurl}
           className={classes.galleryImgDisplay}
