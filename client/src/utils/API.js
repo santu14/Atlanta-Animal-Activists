@@ -30,7 +30,7 @@ export default {
       return data
     })
   },
-  getAllImgs: (data) => {
+  getAllImgs: () => {
     return axios.get("/api/findAllImgs").then( data => {
       console.log(data);
       return data
@@ -49,16 +49,16 @@ export default {
       return data
     });
   },
-    // --------------- About Text Uploader API ---------------------
+    // --------------- Event Uploader API ---------------------
 
-    getAboutTexts: (data) => {
-      return axios.get("/api/getAboutText").then( data => {
+    getAbllEvents: () => {
+      return axios.get("/api/getAllEvents").then( data => {
         console.log(data);
         return data
       })
     },
-    uploadAboutText: (data)=> {
-      return axios.post("/api/uploadAboutText", data).then((data) => {
+    uploadEvent: (data)=> {
+      return axios.post("/api/uploadEvent", data).then((data) => {
         console.log(data);
         return data
       });

@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { signup, signin, signout, checkauth } = require('../controllers/auth');
 const { findOne, findAll, upload, update } = require('../controllers/ImgController');
-const { getAboutText,  uploadAboutText } = require('../controllers/aboutTextController');
+const { getAllEvents,  uploadEvent } = require('../controllers/eventsController');
 
 
 // ------------ Auth Routes -----------------------
@@ -17,8 +17,8 @@ router.get('/findAllImgs', findAll);
 router.put('/updateImg/:id', update);
 router.post('/uploadImg', upload);
 // ---------- About text Routes --------------------
-router.post('/getAboutText', getAboutText);
-router.post('/uploadAboutText', uploadAboutText);
+router.get('/getAllEvents', getAllEvents);
+router.post('/uploadEvent', uploadEvent);
 
 
 

@@ -1,8 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-let aboutTextSchema = new Schema(
+let eventSchema = new Schema(
   {
-    text: {
+    name: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: String,
+      required: true,
+    },
+    description: {
       type: String,
       required: true,
     },
@@ -17,4 +25,4 @@ let aboutTextSchema = new Schema(
  }
   
 );
-module.exports = mongoose.model("About", aboutTextSchema);
+module.exports = mongoose.model("Events", eventSchema);
