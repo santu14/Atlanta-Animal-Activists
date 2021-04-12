@@ -12,6 +12,8 @@ import Gallery from "./components/Gallery";
 import AdminButton from "./components/AdminButton";
 import About from './components/About';
 import Events from './components/Events';
+import Contact from './components/Contact';
+
 
 import Participate from "./components/Participate";
 
@@ -37,15 +39,15 @@ function App() {
               <Events/>
               <Gallery/>
               
-     
+             <Contact/>
           
          
       
             
-              {/* <ImageUploader/>  */}
+               {/* <ImageUploader/>  
               
             
-            {/* auth form container */}
+             auth form container  */}
             <Grid item xs={12} container>
               <Grid item xs={0} sm={2} md={3} lr={4} />
               <Grid item xs={12} sm={8} md={6} lr={4}>
