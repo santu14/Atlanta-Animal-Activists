@@ -508,7 +508,7 @@ const useStyles = makeStyles(() => ({
     },
 
   },
-  galleryCont2:{
+  galleryCont2: {
 
   },
   galleryPaper: {
@@ -516,8 +516,8 @@ const useStyles = makeStyles(() => ({
     padding: theme.spacing(2),
     textAlign: "center",
     borderRadius: '0',
-  
- 
+
+
 
     [theme.breakpoints.down("xs")]: {
 
@@ -528,20 +528,20 @@ const useStyles = makeStyles(() => ({
   galleryLine: {
     borderTop: '16px solid #E25201',
     borderRadius: '0',
-    
+
 
 
   },
-  galleryLine2:{
+  galleryLine2: {
 
     borderRadius: '0',
     borderLeft: '16px solid #E25201',
-    height:"100%",
+    height: "100%",
     [theme.breakpoints.down("xs")]: {
 
-    
+
     },
-    
+
   },
   galleryTitle: {
     fontFamily: 'Varela Round',
@@ -573,15 +573,15 @@ const useStyles = makeStyles(() => ({
     top: "624px",
     padding: "50px",
     borderRadius: '0',
-  
-    
-  
+
+
+
 
   },
 
 
   galleryImgDisplay: {
-    padding:"5%",
+    padding: "5%",
     width: "90%",
     height: "90%",
     justifySelf: "center",
@@ -617,14 +617,14 @@ const useStyles = makeStyles(() => ({
     // paddingTop: "px"
   },
 
- // ------------------------ Contact ------------------------------
+  // ------------------------ Contact ------------------------------
 
- contactCont: {
+  contactCont: {
     marginBottom: "10px",
     display: "flex",
     [theme.breakpoints.down("md")]: {
       marginBottom: "20px",
-      marginTop:"50px",
+      marginTop: "50px",
     },
   },
   contactPaper: {
@@ -632,23 +632,23 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
     position: "relative",
     width: '100%',
-    paddingTop:"45px",
-    justifyContent:"center",
+    paddingTop: "45px",
+    justifyContent: "center",
     borderRadius: '0',
 
     [theme.breakpoints.down("md")]: {
-      
-      paddingTop:"55px",
+
+      paddingTop: "55px",
     },
     [theme.breakpoints.down("sm")]: {
-      paddingTop:"3px",
-      
+      paddingTop: "3px",
+
     },
     [theme.breakpoints.down("xs")]: {
-     
-      
-     
-     
+
+
+
+
       alignSelf: 'stretch',
     },
   },
@@ -661,16 +661,16 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     color: '#FF8E26',
-    top:"10px",
+    top: "10px",
     [theme.breakpoints.down("md")]: {
       fontSize: "26px",
-      top:"35px",
+      top: "35px",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px",
       textAlign: "center",
       alignSelf: 'baseline',
-      
+
       top: '10px',
     },
   },
@@ -680,7 +680,7 @@ const useStyles = makeStyles(() => ({
     fontSize: '18px',
     display: 'flex',
     color: '#C4C4C4',
-    justifyContent:"center",
+    justifyContent: "center",
     padding: '20px',
     top: '53px',
 
@@ -692,7 +692,7 @@ const useStyles = makeStyles(() => ({
     },
     [theme.breakpoints.down("xs")]: {
 
-      top: '10px',
+      top: '5px',
     },
 
   },
@@ -700,14 +700,36 @@ const useStyles = makeStyles(() => ({
     borderBottom: '16px solid #E25201',
     borderRadius: '0',
   },
-  
- eye : {
+
+  eye: {
     // flexShrink: '0',
     position: "relative",
     width: "100%",
+    [theme.breakpoints.down("xs")]: {
+      width: "130%",
+    
+    },
 
 
   },
+
+  icon: {
+    top: "40px",
+    position: "relative",
+    padding: "20px",
+    [theme.breakpoints.down("sm")]: {
+      top: "20px",
+      padding: "10px",
+      width:"10%"
+
+    },
+    [theme.breakpoints.down("xs")]: {
+      top: "0px",
+    },
+
+  },
+
+
   // ------------------------ Modal ------------------------------
   adminModal: {
     width: "600px",
