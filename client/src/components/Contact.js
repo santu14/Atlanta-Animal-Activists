@@ -8,12 +8,12 @@ const Contact = () => {
     const classes = useStyles();
     return (
         <div>
-            <Grid item xs={12} container className={classes.contactCont} >
-                <Grid item xs={3} />
-                <Grid item xs={6} className={classes.contactLine} />
-                <Grid item xs={3} />
-                <Grid item xs={4} />
-                <Grid item xs={4} container>
+            <Grid item xs={12}  container className={classes.contactCont} >
+                <Grid item xs={2} md={3} />
+                <Grid item xs={8} md={6} className={classes.contactLine} />
+                <Grid item xs={2} md={3} />
+                <Grid item xs={0} md={4} />
+                <Grid item xs={7} md={4}container>
                     <Paper className={classes.contactPaper} >
                         <Typography className={classes.contactTitle}>
                             Contact
@@ -28,7 +28,7 @@ const Contact = () => {
                     {/* icons */}
 
                 </Grid>
-                <Grid item xs={4} >
+                <Grid item xs={5} md={4}>
                     <img className={classes.eye} src={Eye} alt='horse eye' />
                 </Grid>
                 <Grid item xs={12} className={classes.contactLine} />
