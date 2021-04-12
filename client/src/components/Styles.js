@@ -616,6 +616,94 @@ const useStyles = makeStyles(() => ({
     },
     // paddingTop: "px"
   },
+
+ // ------------------------ Contact ------------------------------
+
+ contactCont: {
+    marginBottom: "10px",
+    display: "flex",
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "180px",
+    },
+  },
+  contactPaper: {
+    backgroundColor: "#444546",
+    textAlign: "center",
+    position: "relative",
+    width: '100%',
+    justifyContent:"center",
+    borderRadius: '0',
+
+    [theme.breakpoints.down("md")]: {
+      marginTop: '20px',
+      height: '80%',
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: '-16px',
+      height: '103%',
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "40%",
+      marginTop: '90px',
+      marginBottom: "10px",
+      textAlign: "left",
+      alignSelf: 'stretch',
+    },
+  },
+  contactTitle: {
+    fontFamily: 'Varela Round',
+    position: "relative",
+    fontSize: '40px',
+    fontWeight: '400',
+    letterSpacing: '0em',
+    display: "flex",
+    flexDirection: "column",
+    color: '#FF8E26',
+    [theme.breakpoints.down("md")]: {
+      fontSize: "26px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
+      textAlign: "center",
+      alignSelf: 'baseline',
+      padding: '10px',
+      top: '10px',
+    },
+  },
+  contactText: {
+    position: 'relative',
+    textAlign: 'center',
+    fontSize: '18px',
+    display: 'flex',
+    color: '#C4C4C4',
+    justifyContent:"center",
+    padding: '20px',
+
+
+    [theme.breakpoints.down("md")]: {
+      fontSize: "16px",
+      lineHeight: "17px",
+      top: '33px',
+
+    },
+    [theme.breakpoints.down("xs")]: {
+
+      top: '20px',
+    },
+
+  },
+  contactLine: {
+    borderBottom: '16px solid #E25201',
+    borderRadius: '0',
+  },
+  
+ eye : {
+    // flexShrink: '0',
+    position: "relative",
+    width: "100%",
+
+
+  },
   // ------------------------ Modal ------------------------------
   adminModal: {
     width: "600px",
